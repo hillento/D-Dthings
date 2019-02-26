@@ -111,9 +111,9 @@ namespace CharacterCreator
 
     private void UpdateBackgroundInfo(Background background)
     {
-      lblBackgroundSkills.Content = background.Skills;
-      lblBackgroundLangs.Content = background.Languages;
-      lblBackgroundTools.Content = background.Tools;
+      txtblkBackgroundSkills.Text = background.Skills;
+      txtblkBackgroundLangs.Text = background.Languages;
+      txtblkBackgroundTools.Text = background.Tools;
     }
 
     private void CbCharacterClasses_SelectionChanged(object sender, SelectionChangedEventArgs e)

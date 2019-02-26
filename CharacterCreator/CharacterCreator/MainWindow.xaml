@@ -8,6 +8,9 @@
         Title="MainWindow" Height="1000" Width="1200">
   <Grid>
     <Grid.RowDefinitions>
+      <RowDefinition Height="2*"/>
+      <RowDefinition Height="2*"/>
+      <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
@@ -20,16 +23,22 @@
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
 
     <GroupBox Header="BackGround"
-              Grid.ColumnSpan="2"
+              Grid.ColumnSpan="4"
               Grid.RowSpan="2"
               Margin="10">
       <Grid>
         <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="31*"/>
-          <ColumnDefinition Width="95*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
           <RowDefinition Height="*"/>
@@ -51,43 +60,46 @@
                VerticalAlignment="Center" 
                Height="30" 
                Margin="5"/>
-        <Label x:Name="lblBackgroundSkills"
-               Grid.Column="1"
-               Grid.Row="1"
-               FontSize="12"
-               VerticalAlignment="Center" 
-               Height="30" 
-               Margin="5"/>
+        <TextBlock x:Name="txtblkBackgroundSkills"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   FontSize="12"
+                   VerticalAlignment="Center" 
+                   Height="30" 
+                   Margin="5"
+                   TextWrapping="Wrap"/>
         <Label Content="Languages"
                Grid.Column="0"
                Grid.Row="2"
                FontSize="15"/>
-        <Label x:Name="lblBackgroundLangs"
-               Grid.Column="1"
-               Grid.Row="2"
-               FontSize="12"
-               VerticalAlignment="Center" 
-               Height="30" 
-               Margin="5"/>
+        <TextBlock x:Name="txtblkBackgroundLangs"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   FontSize="12"
+                   VerticalAlignment="Center" 
+                   Height="30" 
+                   Margin="5"
+                   TextWrapping="Wrap"/>
         <Label Content="Tools"
                Grid.Column="0"
                Grid.Row="3"
                FontSize="15"/>
-        <Label x:Name="lblBackgroundTools"
-               Grid.Column="1"
-               Grid.Row="3"
-               FontSize="12"
-               VerticalAlignment="Center" 
-               Height="30" 
-               Margin="5"/>
+        <TextBlock x:Name="txtblkBackgroundTools"
+                   Grid.Column="1"
+                   Grid.Row="3"
+                   FontSize="12"
+                   VerticalAlignment="Center" 
+                   Height="30" 
+                   Margin="5"
+                   TextWrapping="Wrap"/>
       </Grid>
 
     </GroupBox>
 
     <GroupBox Header="Class"
-              Grid.ColumnSpan="2"
+              Grid.ColumnSpan="4"
               Grid.RowSpan="2"
-              Grid.Column="2"
+              Grid.Column="4"
               Margin="10">
       <Grid>
         <Grid.ColumnDefinitions>
@@ -157,9 +169,9 @@
     </GroupBox>
 
     <GroupBox Header="Race"
-              Grid.ColumnSpan="2"
+              Grid.ColumnSpan="4"
               Grid.RowSpan="2"
-              Grid.Column="4"
+              Grid.Column="8"
               Margin="10">
       <Grid>
         <Grid.ColumnDefinitions>
@@ -301,6 +313,12 @@
                    Margin="5"/>
 
       </Grid>
+    </GroupBox>
+    <GroupBox Header="Stats"
+              Grid.ColumnSpan="6"
+              Grid.Row="2"
+              FontSize="15">
+      
     </GroupBox>
 
 
