@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Race.cs" />
+    <Compile Include="Rollers.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,9 +98,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="TextResources\Backgounds.txt" />
+    <EmbeddedResource Include="Properties\Backgrounds.txt" />
+    <EmbeddedResource Include="Properties\CharacterClasses.txt" />
+    <EmbeddedResource Include="Properties\Races.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Text_Resources\Backgrounds.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Text_Resources\CharacterClasses.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Text_Resources\Races.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
