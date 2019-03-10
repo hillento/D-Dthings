@@ -197,6 +197,22 @@ namespace CharacterCreator
 
       btnSuicideRoll.Visibility = Visibility.Hidden;
       btnComputerRoll.Visibility = Visibility.Hidden;
+
+      cbStat1.Visibility = Visibility.Hidden;
+      cbStat2.Visibility = Visibility.Hidden;
+      cbStat3.Visibility = Visibility.Hidden;
+      cbStat4.Visibility = Visibility.Hidden;
+      cbStat5.Visibility = Visibility.Hidden;
+      cbStat6.Visibility = Visibility.Hidden;
+
+      lblStatName1.Visibility = Visibility.Visible;
+      lblStatName2.Visibility = Visibility.Visible;
+      lblStatName3.Visibility = Visibility.Visible;
+      lblStatName4.Visibility = Visibility.Visible;
+      lblStatName5.Visibility = Visibility.Visible;
+      lblStatName6.Visibility = Visibility.Visible;
+
+      cbStat1.Visibility = Visibility.Hidden;
     }
 
     private void BtnComputerRoll_Click(object sender, RoutedEventArgs e)
