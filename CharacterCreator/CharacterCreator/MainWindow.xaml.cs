@@ -26,6 +26,7 @@ namespace CharacterCreator
     Dictionary<String, CharacterClassOption> CharacterClassDict = new Dictionary<string, CharacterClassOption>();
     Dictionary<String, Race> RaceDict = new Dictionary<string, Race>();
     Rollers uRollType = new Rollers();
+    Character myCharacter;
     int[] uStatBlock;
     public MainWindow()
     {
@@ -158,6 +159,7 @@ namespace CharacterCreator
       txtblkHitDice.Text = "d" + characterClass.HitDiceName;
       txtblkFavoredStats.Text = characterClass.FavoredStats;
       txtblkClassProficiencies.Text = characterClass.ClassProficiencies;
+      txtblkClassSavingThrows.Text = characterClass.SavingThrows;
     }
 
     private void CbRaces_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -247,7 +249,10 @@ namespace CharacterCreator
                  && cbStat3.SelectedIndex != cbStat4.SelectedIndex && cbStat3.SelectedIndex != cbStat5.SelectedIndex && cbStat3.SelectedIndex != cbStat6.SelectedIndex
                  && cbStat4.SelectedIndex != cbStat5.SelectedIndex && cbStat4.SelectedIndex != cbStat6.SelectedIndex && cbStat5.SelectedIndex != cbStat6.SelectedIndex)
               {
-                CharacterSheet sheetform = new CharacterSheet();
+
+                CreateMyCharacter();
+                
+                CharacterSheet sheetform = new CharacterSheet(myCharacter);
                 sheetform.Show();
               }
               else
@@ -270,6 +275,15 @@ namespace CharacterCreator
       {
         MessageBox.Show("Please select a Background");
       }
+    }
+
+    private void CreateMyCharacter()
+    {
+      BackgroundDict.TryGetValue(cbBackgrounds.SelectedItem.ToString(), out Background background);
+                CharacterClassDict.TryGetValue(cbCharacterClasses.SelectedItem.ToString(), out CharacterClassOption characterClass);
+                RaceDict.TryGetValue(cbRaces.SelectedItem.ToString(), out Race race);
+
+                Character myCharacter = new Character(background, characterClass, race);
     }
   }
 }

@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="CharacterSheet" Height="450" Width="800">
     <Grid>
-        
-    </Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Label x:Name="lblSavingStr"
+           Grid.Row="0"/>
+    <Label x:Name="lblSavingDex"
+           Grid.Row="1"/>
+    <Label x:Name="lblSavingCon"
+           Grid.Row="2"/>
+    <Label x:Name="lblSavingInt"
+           Grid.Row="3"/>
+    <Label x:Name="lblSavingWis"
+           Grid.Row="4"/>
+    <Label x:Name="lblSavingCha"
+           Grid.Row="5"/>
+  </Grid>
 </Window>

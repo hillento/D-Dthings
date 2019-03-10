@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Character.cs" />
     <Compile Include="CharacterSheet.xaml.cs">
       <DependentUpon>CharacterSheet.xaml</DependentUpon>
     </Compile>
@@ -109,15 +110,6 @@
     <EmbeddedResource Include="Properties\Backgrounds.txt" />
     <EmbeddedResource Include="Properties\CharacterClasses.txt" />
     <EmbeddedResource Include="Properties\Races.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Text_Resources\Backgrounds.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Text_Resources\CharacterClasses.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Text_Resources\Races.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

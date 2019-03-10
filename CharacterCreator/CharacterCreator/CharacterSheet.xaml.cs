@@ -19,9 +19,22 @@ namespace CharacterCreator
   /// </summary>
   public partial class CharacterSheet : Window
   {
-    public CharacterSheet()
+    
+    public CharacterSheet(/*Character myCharacter*/)
     {
+
+
       InitializeComponent();
+     
+      
+      LoadSheet();
+    }
+
+    private void LoadSheet()
+    {
+      
+    
+      
     }
   }
 }

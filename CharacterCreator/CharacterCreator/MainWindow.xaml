@@ -156,6 +156,17 @@
                FontSize="12"
                Margin="5"
                TextWrapping="WrapWithOverflow"/>
+        <Label Content="Saving Throws"
+               Grid.Column="0"
+               Grid.Row="6"
+               FontSize="15"/>
+        <TextBlock x:Name="txtblkClassSavingThrows"
+               Grid.Column="1"
+               Grid.Row="6"
+               Grid.RowSpan="2"
+               FontSize="12"
+               Margin="5"
+               TextWrapping="WrapWithOverflow"/>
       </Grid>
     </GroupBox>
 
