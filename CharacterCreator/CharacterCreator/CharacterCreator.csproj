@@ -107,9 +107,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Backgrounds.txt" />
-    <EmbeddedResource Include="Properties\CharacterClasses.txt" />
-    <EmbeddedResource Include="Properties\Races.txt" />
+    <Resource Include="TextResources\Backgrounds.txt" />
+    <Resource Include="TextResources\CharacterClasses.txt" />
+    <Resource Include="TextResources\Races.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

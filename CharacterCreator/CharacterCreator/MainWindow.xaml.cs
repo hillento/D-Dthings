@@ -28,6 +28,8 @@ namespace CharacterCreator
     Rollers uRollType = new Rollers();
     Character myCharacter;
     CharacterSheet sheetform;
+    bool SuicideRoll = false;
+    bool ComputerRoll = false;
     int[] uStatBlock;
     public MainWindow()
     {
@@ -190,6 +192,9 @@ namespace CharacterCreator
 
     private void BtnSuicideRoll_Click(object sender, RoutedEventArgs e)
     {
+      SuicideRoll = true;
+      ComputerRoll = false;
+
       uStatBlock = uRollType.SuicideRoller();
       lblStat1.Content = uStatBlock[0];
       lblStat2.Content = uStatBlock[1];
@@ -213,13 +218,17 @@ namespace CharacterCreator
       lblStatName3.Visibility = Visibility.Visible;
       lblStatName4.Visibility = Visibility.Visible;
       lblStatName5.Visibility = Visibility.Visible;
-      lblStatName6.Visibility = Visibility.Visible;
+      lblStatName6.Visibility = Visibility.Visible;  
+      
 
-      cbStat1.Visibility = Visibility.Hidden;
     }
 
     private void BtnComputerRoll_Click(object sender, RoutedEventArgs e)
     {
+
+      ComputerRoll = true;
+      SuicideRoll = false;
+
       uStatBlock = uRollType.ComputerRoller();
       lblStat1.Content = uStatBlock[0];
       lblStat2.Content = uStatBlock[1];
@@ -284,6 +293,36 @@ namespace CharacterCreator
                 RaceDict.TryGetValue(cbRaces.SelectedItem.ToString(), out Race race);
 
       myCharacter = new Character(background, characterClass, race);
+
+      if (ComputerRoll)
+      {
+        uStatBlock[cbStat1.SelectedIndex] = (int) lblStat1.Content;
+        uStatBlock[cbStat2.SelectedIndex] = (int) lblStat2.Content;
+        uStatBlock[cbStat3.SelectedIndex] = (int) lblStat3.Content;
+        uStatBlock[cbStat4.SelectedIndex] = (int) lblStat4.Content;
+        uStatBlock[cbStat5.SelectedIndex] = (int) lblStat5.Content;
+        uStatBlock[cbStat6.SelectedIndex] = (int) lblStat6.Content;
+
+        myCharacter.CharacterStr = uStatBlock[0];
+        myCharacter.CharacterDex = uStatBlock[1];
+        myCharacter.CharacterCon = uStatBlock[2];
+        myCharacter.CharacterInt = uStatBlock[3];
+        myCharacter.CharacterWis = uStatBlock[4];
+        myCharacter.CharacterCha = uStatBlock[5];
+
+        
+      }
+
+      if (SuicideRoll)
+      {
+        myCharacter.CharacterStr = uStatBlock[0];
+        myCharacter.CharacterDex = uStatBlock[1];
+        myCharacter.CharacterCon = uStatBlock[2];
+        myCharacter.CharacterInt = uStatBlock[3];
+        myCharacter.CharacterWis = uStatBlock[4];
+        myCharacter.CharacterCha = uStatBlock[5];
+      }
+
     }
   }
 }

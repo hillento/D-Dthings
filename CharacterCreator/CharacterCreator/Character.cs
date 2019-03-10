@@ -18,6 +18,12 @@ namespace CharacterCreator
       CharacterIntSavingThrow = myCharacterClass.IntSavingThrow;
       CharacterWisSavingThrow = myCharacterClass.WisSavingThrow;
       CharacterChaSavingThrow = myCharacterClass.ChaSavingThrow;
+
+    }
+
+    public void CharacterMods()
+    {
+      
     }
 
     public bool CharacterStrSavingThrow { get; set; }
@@ -26,6 +32,16 @@ namespace CharacterCreator
     public bool CharacterIntSavingThrow { get; set; }
     public bool CharacterWisSavingThrow { get; set; }
     public bool CharacterChaSavingThrow { get; set; }
+
+    public int CharacterStr { get; set; }
+    public int CharacterDex { get; set; }
+    public int CharacterCon { get; set; }
+    public int CharacterInt { get; set; }
+    public int CharacterWis { get; set; }
+    public int CharacterCha { get; set; }
+
+
+
 
 
   }
