@@ -19,11 +19,11 @@ namespace CharacterCreator
   /// </summary>
   public partial class CharacterSheet : Window
   {
-    
-    public CharacterSheet(/*Character myCharacter*/)
+    Character myCharacter;
+    public CharacterSheet(Character character)
     {
 
-
+      myCharacter = character;
       InitializeComponent();
      
       
@@ -32,9 +32,37 @@ namespace CharacterCreator
 
     private void LoadSheet()
     {
-      
-    
-      
+      if (myCharacter.CharacterStrSavingThrow == true)
+      {
+        ckbxSavingStr.IsChecked = true;
+      }
+
+      if (myCharacter.CharacterDexSavingThrow == true)
+      {
+        ckbxSavingDex.IsChecked = true;
+      }
+
+      if (myCharacter.CharacterConSavingThrow == true)
+      {
+        ckbxSavingCon.IsChecked = true;
+      }
+
+      if (myCharacter.CharacterIntSavingThrow == true)
+      {
+        ckbxSavingInt.IsChecked = true;
+      }
+
+      if (myCharacter.CharacterWisSavingThrow == true)
+      {
+        ckbxSavingWis.IsChecked = true;
+      }
+
+      if (myCharacter.CharacterChaSavingThrow == true)
+      {
+        ckbxSavingCha.IsChecked = true;
+      }
+
+
     }
   }
 }

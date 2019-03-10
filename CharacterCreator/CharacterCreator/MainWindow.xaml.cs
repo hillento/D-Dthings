@@ -27,6 +27,7 @@ namespace CharacterCreator
     Dictionary<String, Race> RaceDict = new Dictionary<string, Race>();
     Rollers uRollType = new Rollers();
     Character myCharacter;
+    CharacterSheet sheetform;
     int[] uStatBlock;
     public MainWindow()
     {
@@ -251,8 +252,7 @@ namespace CharacterCreator
               {
 
                 CreateMyCharacter();
-                
-                CharacterSheet sheetform = new CharacterSheet(myCharacter);
+                sheetform = new CharacterSheet(myCharacter);
                 sheetform.Show();
               }
               else
@@ -283,7 +283,7 @@ namespace CharacterCreator
                 CharacterClassDict.TryGetValue(cbCharacterClasses.SelectedItem.ToString(), out CharacterClassOption characterClass);
                 RaceDict.TryGetValue(cbRaces.SelectedItem.ToString(), out Race race);
 
-                Character myCharacter = new Character(background, characterClass, race);
+      myCharacter = new Character(background, characterClass, race);
     }
   }
 }

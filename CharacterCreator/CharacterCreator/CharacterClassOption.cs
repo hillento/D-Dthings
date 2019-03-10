@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCreator
 {
-  class CharacterClassOption
+  public class CharacterClassOption
   {
     public CharacterClassOption(string[] ClassInfo)
     {
@@ -17,10 +17,36 @@ namespace CharacterCreator
       ClassProficiencies = ClassInfo[4];
       SavingThrows = ClassInfo[5];
 
-      SetSavingThrows();
-    }
+      GetSavingThrows();
+  }
 
- 
+    private void GetSavingThrows()
+    {
+      if(SavingThrows.Contains("Str"))
+      {
+        StrSavingThrow = true;
+      }
+      if (SavingThrows.Contains("Dex"))
+      {
+        DexSavingThrow = true;
+      }
+      if (SavingThrows.Contains("Con"))
+      {
+        ConSavingThrow = true;
+      }
+      if (SavingThrows.Contains("Int"))
+      {
+        IntSavingThrow = true;
+      }
+      if (SavingThrows.Contains("Wis"))
+      {
+        WisSavingThrow = true;
+      }
+      if (SavingThrows.Contains("Cha"))
+      {
+        ChaSavingThrow = true;
+      }
+    }
 
     public string ClassName { get; set; }
     public string Description { get; set; }
@@ -36,33 +62,7 @@ namespace CharacterCreator
     public bool WisSavingThrow { get; set; }
     public bool ChaSavingThrow { get; set; }
 
-    private void SetSavingThrows()
-    {
-      if(SavingThrows == "*Strength*")
-      {
-        StrSavingThrow = true;
-      }
-      if (SavingThrows == "*Dexterity*")
-      {
-        DexSavingThrow = true;
-      }
-      if (SavingThrows == "*Constitution*")
-      {
-        ConSavingThrow = true;
-      }
-      if (SavingThrows == "*Intelligence*")
-      {
-        IntSavingThrow = true;
-      }
-      if (SavingThrows == "*Wisdom*")
-      {
-        WisSavingThrow = true;
-      }
-      if (SavingThrows == "*Charisma*")
-      {
-        ChaSavingThrow = true;
-      }
-    }
+    
 
   }
 }

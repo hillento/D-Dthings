@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterCreator
 {
-  class Background
+  public class Background
   {
     public Background(string[] BgInfo)
     {

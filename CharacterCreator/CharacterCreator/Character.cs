@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CharacterCreator
 {
-  class Character
+  public class Character
   {
-    public Character(Background myBackground, CharacterClassOption myCharacterClass, Race myRace)
+     public Character(Background myBackground, CharacterClassOption myCharacterClass, Race myRace)
     {
 
 

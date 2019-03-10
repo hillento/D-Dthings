@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CharacterCreator"
         mc:Ignorable="d"
         Title="CharacterSheet" Height="450" Width="800">
-    <Grid>
+  <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
@@ -15,17 +15,29 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <Label x:Name="lblSavingStr"
-           Grid.Row="0"/>
-    <Label x:Name="lblSavingDex"
-           Grid.Row="1"/>
-    <Label x:Name="lblSavingCon"
-           Grid.Row="2"/>
-    <Label x:Name="lblSavingInt"
-           Grid.Row="3"/>
-    <Label x:Name="lblSavingWis"
-           Grid.Row="4"/>
-    <Label x:Name="lblSavingCha"
-           Grid.Row="5"/>
+    <CheckBox x:Name="ckbxSavingStr"
+              Grid.Row="0"
+              IsHitTestVisible="False"
+              IsChecked="False"/>
+    <CheckBox x:Name="ckbxSavingDex"
+              Grid.Row="1"     
+              IsHitTestVisible="False"
+              IsChecked="False"/>
+    <CheckBox x:Name="ckbxSavingCon"
+              Grid.Row="2"
+              IsHitTestVisible="False"
+              IsChecked="False"/>
+    <CheckBox x:Name="ckbxSavingInt"
+              Grid.Row="3"
+              IsHitTestVisible="False"
+              IsChecked="False"/>
+    <CheckBox x:Name="ckbxSavingWis"
+              Grid.Row="4"
+              IsHitTestVisible="False"
+              IsChecked="False"/>
+    <CheckBox x:Name="ckbxSavingCha"
+              Grid.Row="5"
+              IsHitTestVisible="False"
+              IsChecked="False"/>
   </Grid>
 </Window>
