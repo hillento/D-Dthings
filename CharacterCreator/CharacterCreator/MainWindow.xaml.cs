@@ -218,8 +218,16 @@ namespace CharacterCreator
       lblStatName3.Visibility = Visibility.Visible;
       lblStatName4.Visibility = Visibility.Visible;
       lblStatName5.Visibility = Visibility.Visible;
-      lblStatName6.Visibility = Visibility.Visible;  
-      
+      lblStatName6.Visibility = Visibility.Visible;
+
+      cbStat1.SelectedIndex = 0;
+      cbStat2.SelectedIndex = 1;
+      cbStat3.SelectedIndex = 2;
+      cbStat4.SelectedIndex = 3;
+      cbStat5.SelectedIndex = 4;
+      cbStat6.SelectedIndex = 5;
+
+
 
     }
 
