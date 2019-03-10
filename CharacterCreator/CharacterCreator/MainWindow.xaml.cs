@@ -23,8 +23,10 @@ namespace CharacterCreator
   public partial class MainWindow : Window
   {
     Dictionary<String, Background> BackgroundDict = new Dictionary<string, Background>();
-    Dictionary<String, CharacterClass> CharacterClassDict = new Dictionary<string, CharacterClass>();
+    Dictionary<String, CharacterClassOption> CharacterClassDict = new Dictionary<string, CharacterClassOption>();
     Dictionary<String, Race> RaceDict = new Dictionary<string, Race>();
+    Rollers uRollType = new Rollers();
+    int[] uStatBlock;
     public MainWindow()
     {
       InitializeComponent();
@@ -32,6 +34,31 @@ namespace CharacterCreator
       LoadBackground();
       LoadClasses();
       LoadRaces();
+
+      LoadRollAssignment();
+      
+    }
+
+    private void LoadRollAssignment()
+    {
+      string[] StatNames = {"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma", "Select... " };
+
+      for (int i = 0; i < StatNames.Length; i++)
+      {
+        cbStat1.Items.Add(StatNames[i]);
+        cbStat2.Items.Add(StatNames[i]);
+        cbStat3.Items.Add(StatNames[i]);
+        cbStat4.Items.Add(StatNames[i]);
+        cbStat5.Items.Add(StatNames[i]);
+        cbStat6.Items.Add(StatNames[i]);
+      }
+      cbStat1.SelectedIndex = 6;
+      cbStat2.SelectedIndex = 6;
+      cbStat3.SelectedIndex = 6;
+      cbStat4.SelectedIndex = 6;
+      cbStat5.SelectedIndex = 6;
+      cbStat6.SelectedIndex = 6;
+
     }
 
     private void LoadBackground()
@@ -68,7 +95,7 @@ namespace CharacterCreator
         {
           tempClasse = CharacterClassFile.ReadLine().Split('\t');
           cbCharacterClasses.Items.Add(tempClasse[0]);
-          CharacterClassDict.Add(tempClasse[0], new CharacterClass(tempClasse));
+          CharacterClassDict.Add(tempClasse[0], new CharacterClassOption(tempClasse));
         }
       }
       catch (Exception)
@@ -119,16 +146,16 @@ namespace CharacterCreator
 
     private void CbCharacterClasses_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-      if (CharacterClassDict.TryGetValue(cbCharacterClasses.SelectedItem.ToString(), out CharacterClass characterClass))
+      if (CharacterClassDict.TryGetValue(cbCharacterClasses.SelectedItem.ToString(), out CharacterClassOption characterClass))
       {
         UpdateClassInfo(characterClass);
       }
     }
 
-    private void UpdateClassInfo(CharacterClass characterClass)
+    private void UpdateClassInfo(CharacterClassOption characterClass)
     {
       txtblkClassDesc.Text = characterClass.Description;
-      txtblkHitDice.Text = characterClass.HitDice;
+      txtblkHitDice.Text = "d" + characterClass.HitDiceName;
       txtblkFavoredStats.Text = characterClass.FavoredStats;
       txtblkClassProficiencies.Text = characterClass.ClassProficiencies;
     }
@@ -156,6 +183,77 @@ namespace CharacterCreator
       txtblkDarkWisBonus.Text = race.WisdomBonus.ToString();
       txtblkChaBonus.Text = race.CharismaBonus.ToString();
       
+    }
+
+    private void BtnSuicideRoll_Click(object sender, RoutedEventArgs e)
+    {
+      uStatBlock = uRollType.SuicideRoller();
+      lblStat1.Content = uStatBlock[0];
+      lblStat2.Content = uStatBlock[1];
+      lblStat3.Content = uStatBlock[2];
+      lblStat4.Content = uStatBlock[3];
+      lblStat5.Content = uStatBlock[4];
+      lblStat6.Content = uStatBlock[5];
+
+      btnSuicideRoll.Visibility = Visibility.Hidden;
+      btnComputerRoll.Visibility = Visibility.Hidden;
+    }
+
+    private void BtnComputerRoll_Click(object sender, RoutedEventArgs e)
+    {
+      uStatBlock = uRollType.ComputerRoller();
+      lblStat1.Content = uStatBlock[0];
+      lblStat2.Content = uStatBlock[1];
+      lblStat3.Content = uStatBlock[2];
+      lblStat4.Content = uStatBlock[3];
+      lblStat5.Content = uStatBlock[4];
+      lblStat6.Content = uStatBlock[5];
+
+     
+      btnComputerRoll.Visibility = Visibility.Hidden;
+    }
+
+    private void BtnGenerateCharacter_Click(object sender, RoutedEventArgs e)
+    {
+      if(cbBackgrounds.SelectedIndex != -1)
+      {
+        if (cbCharacterClasses.SelectedIndex != -1)
+        {
+          if (cbRaces.SelectedIndex != -1)
+          {
+            if (cbStat1.SelectedIndex != 6 && cbStat2.SelectedIndex != 6 && cbStat3.SelectedIndex != 6 && cbStat4.SelectedIndex != 6 && cbStat5.SelectedIndex != 6 && cbStat6.SelectedIndex != 6 )
+            {
+
+
+              if (cbStat1.SelectedIndex != cbStat2.SelectedIndex && cbStat1.SelectedIndex != cbStat3.SelectedIndex && cbStat1.SelectedIndex != cbStat4.SelectedIndex
+                 && cbStat1.SelectedIndex != cbStat5.SelectedIndex && cbStat1.SelectedIndex != cbStat6.SelectedIndex && cbStat2.SelectedIndex != cbStat3.SelectedIndex
+                 && cbStat2.SelectedIndex != cbStat4.SelectedIndex && cbStat2.SelectedIndex != cbStat5.SelectedIndex && cbStat2.SelectedIndex != cbStat6.SelectedIndex
+                 && cbStat3.SelectedIndex != cbStat4.SelectedIndex && cbStat3.SelectedIndex != cbStat5.SelectedIndex && cbStat3.SelectedIndex != cbStat6.SelectedIndex
+                 && cbStat4.SelectedIndex != cbStat5.SelectedIndex && cbStat4.SelectedIndex != cbStat6.SelectedIndex && cbStat5.SelectedIndex != cbStat6.SelectedIndex)
+              {
+                CharacterSheet sheetform = new CharacterSheet();
+                sheetform.Show();
+              }
+              else
+              {
+                MessageBox.Show("Please assign each roll value to a unique stat.");
+              }
+            }
+          }
+          else
+          {
+            MessageBox.Show("Please select a Race");
+          }
+        }
+        else
+        {
+          MessageBox.Show("Please select a Class");
+        }
+      }
+      else
+      {
+        MessageBox.Show("Please select a Background");
+      }
     }
   }
 }
