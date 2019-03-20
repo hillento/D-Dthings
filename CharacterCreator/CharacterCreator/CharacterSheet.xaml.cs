@@ -27,10 +27,28 @@ namespace CharacterCreator
       InitializeComponent();
 
       SavingThrows();
+      SetStats();
 
      
       
       
+    }
+
+    private void SetStats()
+    {
+      lblStr.Content = myCharacter.Strength;
+      lblDex.Content = myCharacter.Dexterity;
+      lblCon.Content = myCharacter.Constitution;
+      lblInt.Content = myCharacter.Intelligence;
+      lblWis.Content = myCharacter.Wisdom;
+      lblCha.Content = myCharacter.Charisma;
+
+      lblStrMod.Content = myCharacter.StrBonus;
+      lblDexMod.Content = myCharacter.DexBonus;
+      lblConMod.Content = myCharacter.ConBonus;
+      lblIntMod.Content = myCharacter.IntBonus;
+      lblWisMod.Content = myCharacter.WisBonus;
+      lblChaMod.Content = myCharacter.ChaBonus;
     }
 
     private void SavingThrows()

@@ -22,7 +22,9 @@
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
-    <GroupBox Header ="Saving Throws">
+    <GroupBox Header ="Saving Throws"
+              Grid.Column="1"
+              Grid.Row="1">
       <Grid>
         <Grid.RowDefinitions>
           <RowDefinition Height="*"/>
@@ -118,6 +120,500 @@
                VerticalAlignment="Center"/>
       </Grid>
     </GroupBox>
-    
+    <GroupBox Header="Stats"
+              Grid.Column="0"
+              Grid.Row="1"
+              Grid.RowSpan="4"
+              HorizontalAlignment="Center">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Strength"
+                  Grid.Row="0"
+                  HorizontalAlignment="Stretch"
+                  Margin="10">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="2*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblStrMod"
+                   Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+            <Label x:Name="lblStr"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   FontSize="10"/>
+          </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Dexterity"
+                  Grid.Row="1"
+                  HorizontalAlignment="Stretch"
+                  Margin="10">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="2*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblDexMod"
+                   Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+            <Label x:Name="lblDex"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   FontSize="10"/>
+          </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Constitution"
+                  Grid.Row="2"
+                  HorizontalAlignment="Stretch"
+                  Margin="10">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="2*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblConMod"
+                   Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+            <Label x:Name="lblCon"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   FontSize="10"/>
+          </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Intelligence"
+                  Grid.Row="3"
+                  HorizontalAlignment="Stretch"
+                  Margin="10">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="2*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblIntMod"
+                   Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+            <Label x:Name="lblInt"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   FontSize="10"/>
+          </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Wisdom"
+                  Grid.Row="4"
+                  HorizontalAlignment="Stretch"
+                  Margin="10">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="2*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblWisMod"
+                   Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+            <Label x:Name="lblWis"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   FontSize="10"/>
+          </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Charisma"
+                  Grid.Row="5"
+                  HorizontalAlignment="Stretch"
+                  Margin="10">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="2*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblChaMod"
+                   Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+            <Label x:Name="lblCha"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   FontSize="10"/>
+          </Grid>
+        </GroupBox>
+      </Grid>
+    </GroupBox>
+    <GroupBox Header="Skills"
+              Grid.Column="1"
+              Grid.Row="2"
+              Grid.RowSpan="3">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CheckBox x:Name="cbAcrobatics"
+                  Grid.Column="0"
+                  Grid.Row="0"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbAnimalHandling"
+                  Grid.Column="0"
+                  Grid.Row="1"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbArcana"
+                  Grid.Column="0"
+                  Grid.Row="2"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbAthletics"
+                  Grid.Column="0"
+                  Grid.Row="3"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbDeception"
+                  Grid.Column="0"
+                  Grid.Row="4"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbHistory"
+                  Grid.Column="0"
+                  Grid.Row="5"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbInsight"
+                  Grid.Column="0"
+                  Grid.Row="6"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbIntimidation"
+                  Grid.Column="0"
+                  Grid.Row="7"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbInvestigation"
+                  Grid.Column="0"
+                  Grid.Row="8"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbMedicine"
+                  Grid.Column="0"
+                  Grid.Row="9"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbNature"
+                  Grid.Column="0"
+                  Grid.Row="10"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbPerception"
+                  Grid.Column="0"
+                  Grid.Row="11"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbPerformance"
+                  Grid.Column="0"
+                  Grid.Row="12"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbPersuasion"
+                  Grid.Column="0"
+                  Grid.Row="13"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbReligion"
+                  Grid.Column="0"
+                  Grid.Row="14"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbSlightOfHand"
+                  Grid.Column="0"
+                  Grid.Row="15"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbStealth"
+                  Grid.Column="0"
+                  Grid.Row="16"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <CheckBox x:Name="cbSurvival"
+                  Grid.Column="0"
+                  Grid.Row="17"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+
+        <Label x:Name="lblAcrobatics"
+                  Grid.Column="1"
+                  Grid.Row="0"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblAnimalHandling"
+                  Grid.Column="1"
+                  Grid.Row="1"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblArcana"
+                  Grid.Column="1"
+                  Grid.Row="2"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblAthletics"
+                  Grid.Column="1"
+                  Grid.Row="3"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblDeception"
+                  Grid.Column="1"
+                  Grid.Row="4"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblHistory"
+                  Grid.Column="1"
+                  Grid.Row="5"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblInsight"
+                  Grid.Column="1"
+                  Grid.Row="6"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblIntimidation"
+                  Grid.Column="1"
+                  Grid.Row="7"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblInvestigation"
+                  Grid.Column="1"
+                  Grid.Row="8"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblMedicine"
+                  Grid.Column="1"
+                  Grid.Row="9"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblNature"
+                  Grid.Column="1"
+                  Grid.Row="10"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblPerception"
+                  Grid.Column="1"
+                  Grid.Row="11"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblPerformance"
+                  Grid.Column="1"
+                  Grid.Row="12"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblPersuasion"
+                  Grid.Column="1"
+                  Grid.Row="13"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblReligion"
+                  Grid.Column="1"
+                  Grid.Row="14"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblSlightOfHand"
+                  Grid.Column="1"
+                  Grid.Row="15"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblStealth"
+                  Grid.Column="1"
+                  Grid.Row="16"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label x:Name="lblSurvival"
+                  Grid.Column="1"
+                  Grid.Row="17"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+
+
+        <Label Content="Acrobatics"
+                  Grid.Column="2"
+                  Grid.Row="0"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Animal Handling"
+                  Grid.Column="2"
+                  Grid.Row="1"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Arcana"
+                  Grid.Column="2"
+                  Grid.Row="2"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Athletics"
+                  Grid.Column="2"
+                  Grid.Row="3"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Deception"
+                  Grid.Column="2"
+                  Grid.Row="4"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="History"
+                  Grid.Column="2"
+                  Grid.Row="5"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Insight"
+                  Grid.Column="2"
+                  Grid.Row="6"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Intimidation"
+                  Grid.Column="2"
+                  Grid.Row="7"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Investigation"
+                  Grid.Column="2"
+                  Grid.Row="8"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Medicine"
+                  Grid.Column="2"
+                  Grid.Row="9"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Nature"
+                  Grid.Column="2"
+                  Grid.Row="10"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Perception"
+                  Grid.Column="2"
+                  Grid.Row="11"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Performance"
+                  Grid.Column="2"
+                  Grid.Row="12"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Persuasion"
+                  Grid.Column="2"
+                  Grid.Row="13"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Religion"
+                  Grid.Column="2"
+                  Grid.Row="14"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Slight Of Hand"
+                  Grid.Column="2"
+                  Grid.Row="15"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Stealth"
+                  Grid.Column="2"
+                  Grid.Row="16"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+        <Label Content="Survival"
+                  Grid.Column="2"
+                  Grid.Row="17"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  IsHitTestVisible="False"/>
+      </Grid>
+      
+    </GroupBox>
   </Grid>
 </Window>
