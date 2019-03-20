@@ -46,12 +46,12 @@ namespace CharacterCreator
       chkbxSavingWis.IsChecked = myCharacter.WisSavingThrowBool;
       chkbxSavingCha.IsChecked = myCharacter.ChaSavingThrowBool;
 
-      txtbxSavingStr.Text = myCharacter.StrSavingThrowBonus.ToString();
-      txtbxSavingDex.Text = myCharacter.DexSavingThrowBonus.ToString();
-      txtbxSavingCon.Text = myCharacter.ConSavingThrowBonus.ToString();
-      txtbxSavingInt.Text = myCharacter.IntSavingThrowBonus.ToString();
-      txtbxSavingWis.Text = myCharacter.WisSavingThrowBonus.ToString();
-      txtbxSavingCha.Text = myCharacter.ChaSavingThrowBonus.ToString();
+      lblSavingStr.Content = myCharacter.StrSavingThrowBonus.ToString();
+      lblSavingDex.Content = myCharacter.DexSavingThrowBonus.ToString();
+      lblSavingCon.Content = myCharacter.ConSavingThrowBonus.ToString();
+      lblSavingInt.Content = myCharacter.IntSavingThrowBonus.ToString();
+      lblSavingWis.Content = myCharacter.WisSavingThrowBonus.ToString();
+      lblSavingCha.Content = myCharacter.ChaSavingThrowBonus.ToString();
     }
   }
 }
