@@ -83,12 +83,13 @@ namespace CharacterCreator
     {
       int[] statBonusArray = { 0, 0, 0, 0, 0, 0 };
 
-      statBonusArray[0] = (Strength - 10) / 2;
-      statBonusArray[1] = (Dexterity - 10) / 2;
-      statBonusArray[2] = (Constitution- 10) / 2;
-      statBonusArray[3] = (Intelligence - 10) / 2;
-      statBonusArray[4] = (Wisdom - 10) / 2;
-      statBonusArray[5] = (Charisma - 10) / 2;
+      
+      statBonusArray[0] = (int)Math.Floor(((double)Strength - (double)10) / (double)2);
+      statBonusArray[1] = (int)Math.Floor(((double)Dexterity - (double)10) / (double)2);
+      statBonusArray[2] = (int)Math.Floor(((double)Constitution - (double)10) / (double)2);
+      statBonusArray[3] = (int)Math.Floor(((double)Intelligence - (double)10) / (double)2);
+      statBonusArray[4] = (int)Math.Floor(((double)Wisdom - (double)10) / (double)2);
+      statBonusArray[5] = (int)Math.Floor(((double)Charisma - (double)10) / (double)2);
 
       StrBonus = statBonusArray[0];
       DexBonus = statBonusArray[1];
@@ -110,6 +111,13 @@ namespace CharacterCreator
       SavingThrowBools[3] = myCharacterClass.IntSavingThrow;
       SavingThrowBools[4] = myCharacterClass.WisSavingThrow;
       SavingThrowBools[5] = myCharacterClass.ChaSavingThrow;
+
+      StrSavingThrowBool = SavingThrowBools[0];
+      DexSavingThrowBool = SavingThrowBools[1];
+      ConSavingThrowBool = SavingThrowBools[2];
+      IntSavingThrowBool = SavingThrowBools[3];
+      WisSavingThrowBool = SavingThrowBools[4];
+      ChaSavingThrowBool = SavingThrowBools[5];
 
       return SavingThrowBools;
     }

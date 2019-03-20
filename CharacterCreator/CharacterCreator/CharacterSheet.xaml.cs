@@ -35,14 +35,16 @@ namespace CharacterCreator
 
     private void SavingThrows()
     {
+      
+
+      myCharacter.SetSaveValues();
+
       chkbxSavingStr.IsChecked = myCharacter.StrSavingThrowBool;
       chkbxSavingDex.IsChecked = myCharacter.DexSavingThrowBool;
       chkbxSavingCon.IsChecked = myCharacter.ConSavingThrowBool;
       chkbxSavingInt.IsChecked = myCharacter.IntSavingThrowBool;
       chkbxSavingWis.IsChecked = myCharacter.WisSavingThrowBool;
       chkbxSavingCha.IsChecked = myCharacter.ChaSavingThrowBool;
-
-      myCharacter.SetSaveValues();
 
       txtbxSavingStr.Text = myCharacter.StrSavingThrowBonus.ToString();
       txtbxSavingDex.Text = myCharacter.DexSavingThrowBonus.ToString();
