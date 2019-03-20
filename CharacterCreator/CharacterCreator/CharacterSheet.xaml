@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterCreator"
         mc:Ignorable="d"
-        Title="CharacterSheet" Height="450" Width="800">
+        Title="CharacterSheet" Height="29.7cm" Width="21cm">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="*"/>
@@ -15,29 +15,35 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <CheckBox x:Name="ckbxSavingStr"
-              Grid.Row="0"
-              IsHitTestVisible="False"
-              IsChecked="False"/>
-    <CheckBox x:Name="ckbxSavingDex"
-              Grid.Row="1"     
-              IsHitTestVisible="False"
-              IsChecked="False"/>
-    <CheckBox x:Name="ckbxSavingCon"
-              Grid.Row="2"
-              IsHitTestVisible="False"
-              IsChecked="False"/>
-    <CheckBox x:Name="ckbxSavingInt"
-              Grid.Row="3"
-              IsHitTestVisible="False"
-              IsChecked="False"/>
-    <CheckBox x:Name="ckbxSavingWis"
-              Grid.Row="4"
-              IsHitTestVisible="False"
-              IsChecked="False"/>
-    <CheckBox x:Name="ckbxSavingCha"
-              Grid.Row="5"
-              IsHitTestVisible="False"
-              IsChecked="False"/>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <GroupBox Header ="Saving Throws">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <CheckBox x:Name="cbSavingStr"
+                Grid.Column="0"
+                Grid.Row="0"
+                IsHitTestVisible="False"/>
+      </Grid>
+    </GroupBox>
+    
   </Grid>
 </Window>
