@@ -38,10 +38,54 @@
           <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
-        <CheckBox x:Name="cbSavingStr"
+        <CheckBox x:Name="chkbxSavingStr"
                 Grid.Column="0"
                 Grid.Row="0"
                 IsHitTestVisible="False"/>
+        <CheckBox x:Name="chkbxSavingDex"
+                Grid.Column="0"
+                Grid.Row="1"
+                IsHitTestVisible="False"/>
+        <CheckBox x:Name="chkbxSavingCon"
+                Grid.Column="0"
+                Grid.Row="2"
+                IsHitTestVisible="False"/>
+        <CheckBox x:Name="chkbxSavingInt"
+                Grid.Column="0"
+                Grid.Row="3"
+                IsHitTestVisible="False"/>
+        <CheckBox x:Name="chkbxSavingWis"
+                Grid.Column="0"
+                Grid.Row="4"
+                IsHitTestVisible="False"/>
+        <CheckBox x:Name="chkbxSavingCha"
+                Grid.Column="0"
+                Grid.Row="5"
+                IsHitTestVisible="False"/>
+        <TextBox x:Name="txtbxSavingStr"
+                 Grid.Column="1"
+                 Grid.Row="0"
+                 IsHitTestVisible="False"/>
+        <TextBox x:Name="txtbxSavingDex"
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 IsHitTestVisible="False"/>
+        <TextBox x:Name="txtbxSavingCon"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 IsHitTestVisible="False"/>
+        <TextBox x:Name="txtbxSavingInt"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 IsHitTestVisible="False"/>
+        <TextBox x:Name="txtbxSavingWis"
+                 Grid.Column="1"
+                 Grid.Row="4"
+                 IsHitTestVisible="False"/>
+        <TextBox x:Name="txtbxSavingCha"
+                 Grid.Column="1"
+                 Grid.Row="5"
+                 IsHitTestVisible="False"/>
       </Grid>
     </GroupBox>
     

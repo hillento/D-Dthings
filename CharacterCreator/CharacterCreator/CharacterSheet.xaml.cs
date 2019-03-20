@@ -25,9 +25,31 @@ namespace CharacterCreator
 
       myCharacter = character;
       InitializeComponent();
+
+      SavingThrows();
+
      
       
       
+    }
+
+    private void SavingThrows()
+    {
+      chkbxSavingStr.IsChecked = myCharacter.StrSavingThrowBool;
+      chkbxSavingDex.IsChecked = myCharacter.DexSavingThrowBool;
+      chkbxSavingCon.IsChecked = myCharacter.ConSavingThrowBool;
+      chkbxSavingInt.IsChecked = myCharacter.IntSavingThrowBool;
+      chkbxSavingWis.IsChecked = myCharacter.WisSavingThrowBool;
+      chkbxSavingCha.IsChecked = myCharacter.ChaSavingThrowBool;
+
+      myCharacter.SetSaveValues();
+
+      txtbxSavingStr.Text = myCharacter.StrSavingThrowBonus.ToString();
+      txtbxSavingDex.Text = myCharacter.DexSavingThrowBonus.ToString();
+      txtbxSavingCon.Text = myCharacter.ConSavingThrowBonus.ToString();
+      txtbxSavingInt.Text = myCharacter.IntSavingThrowBonus.ToString();
+      txtbxSavingWis.Text = myCharacter.WisSavingThrowBonus.ToString();
+      txtbxSavingCha.Text = myCharacter.ChaSavingThrowBonus.ToString();
     }
   }
 }

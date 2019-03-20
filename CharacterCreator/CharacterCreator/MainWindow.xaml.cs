@@ -393,12 +393,13 @@ namespace CharacterCreator
           uStatBlock[cbStat5.SelectedIndex] = (int)lblStat5.Content;
           uStatBlock[cbStat6.SelectedIndex] = (int)lblStat6.Content;
 
-          myCharacter.CharacterStr = uStatBlock[0];
-          myCharacter.CharacterDex = uStatBlock[1];
-          myCharacter.CharacterCon = uStatBlock[2];
-          myCharacter.CharacterInt = uStatBlock[3];
-          myCharacter.CharacterWis = uStatBlock[4];
-          myCharacter.CharacterCha = uStatBlock[5];
+          myCharacter.Strength = uStatBlock[0];
+          myCharacter.Dexterity = uStatBlock[1];
+          myCharacter.Constitution = uStatBlock[2];
+          myCharacter.Intelligence = uStatBlock[3];
+          myCharacter.Wisdom = uStatBlock[4];
+          myCharacter.Charisma = uStatBlock[5];
+          myCharacter.StatBonusArray = myCharacter.SetStatMods();
 
           sheetform = new CharacterSheet(myCharacter);
           sheetform.Show();
@@ -413,12 +414,13 @@ namespace CharacterCreator
       if (SuicideRoll)
       {
 
-        myCharacter.CharacterStr = uStatBlock[0];
-        myCharacter.CharacterDex = uStatBlock[1];
-        myCharacter.CharacterCon = uStatBlock[2];
-        myCharacter.CharacterInt = uStatBlock[3];
-        myCharacter.CharacterWis = uStatBlock[4];
-        myCharacter.CharacterCha = uStatBlock[5];
+        myCharacter.Strength = uStatBlock[0];
+        myCharacter.Dexterity = uStatBlock[1];
+        myCharacter.Constitution = uStatBlock[2];
+        myCharacter.Intelligence = uStatBlock[3];
+        myCharacter.Wisdom = uStatBlock[4];
+        myCharacter.Charisma = uStatBlock[5];
+        myCharacter.StatBonusArray = myCharacter.SetStatMods();
 
         sheetform = new CharacterSheet(myCharacter);
         sheetform.Show();
@@ -445,12 +447,13 @@ namespace CharacterCreator
             uStatBlock[4] = int.Parse(txtbxSelfRolledStr.Text);
             uStatBlock[5] = int.Parse(txtbxSelfRolledStr.Text);
 
-            myCharacter.CharacterStr = uStatBlock[0];
-            myCharacter.CharacterDex = uStatBlock[1];
-            myCharacter.CharacterCon = uStatBlock[2];
-            myCharacter.CharacterInt = uStatBlock[3];
-            myCharacter.CharacterWis = uStatBlock[4];
-            myCharacter.CharacterCha = uStatBlock[5];
+            myCharacter.Strength = uStatBlock[0];
+            myCharacter.Dexterity = uStatBlock[1];
+            myCharacter.Constitution = uStatBlock[2];
+            myCharacter.Intelligence = uStatBlock[3];
+            myCharacter.Wisdom = uStatBlock[4];
+            myCharacter.Charisma = uStatBlock[5];
+            myCharacter.StatBonusArray = myCharacter.SetStatMods();
 
             sheetform = new CharacterSheet(myCharacter);
             sheetform.Show();
