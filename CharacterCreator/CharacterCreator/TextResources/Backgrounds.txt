@@ -1,14 +1,14 @@
 Name	Source	Skills	Languages	Tools
-Acolyte 	PHB 	Insight (WIS), religion (INT) 	Any x2 	None
-Charlatan 	PHB 	Deception (CHA), sleight of hand (DEX) 	None 	Disguise kit, forgery kit
-Criminal 	PHB 	Deception (CHA), stealth (DEX) 	None 	Gaming set x1, thieves' tools
-Entertainer 	PHB 	Acrobatics (DEX), performance (CHA) 	None 	Disguise kit, musical instrument x1
-Folk Hero 	PHB 	Animal handling (WIS), survival (WIS) 	None 	Artisan's tools x1, vehicles (land)
-Guild Artisan 	PHB 	Insight (WIS), persuasion (CHA) 	Any x1 	Artisan's tools x1
-Hermit 	PHB 	Medicine (WIS), religion (INT) 	Any x1 	Herbalism kit
-Noble 	PHB 	History (INT), persuasion (CHA) 	Any x1 	Gaming set x1
-Outlander 	PHB 	Athletics (STR), survival (WIS) 	Any x1 	Musical instrument x1
-Sage 	PHB 	Arcana (INT), history (INT) 	Any x2 	None
-Soldier 	PHB 	Athletics (STR), intimidation (CHA) 	None 	Gaming set x1, vehicles (land)
-Sailor 	PHB 	Athletics (STR), perception (WIS) 	None 	Navigator's tools, vehicles (water)
-Urchin 	PHB 	Sleight of hand (DEX), stealth (DEX) 	None 	Disguise kit, thieves' tools 
+Acolyte 	PHB 	Insight (WIS), Religion (INT) 	Any x2 	None
+Charlatan 	PHB 	Deception (CHA), Sleight of hand (DEX) 	None 	Disguise kit, forgery kit
+Criminal 	PHB 	Deception (CHA), Stealth (DEX) 	None 	Gaming set x1, thieves' tools
+Entertainer 	PHB 	Acrobatics (DEX), Performance (CHA) 	None 	Disguise kit, musical instrument x1
+Folk Hero 	PHB 	Animal Handling (WIS), Survival (WIS) 	None 	Artisan's tools x1, vehicles (land)
+Guild Artisan 	PHB 	Insight (WIS), Persuasion (CHA) 	Any x1 	Artisan's tools x1
+Hermit 	PHB 	Medicine (WIS), Religion (INT) 	Any x1 	Herbalism kit
+Noble 	PHB 	History (INT), Persuasion (CHA) 	Any x1 	Gaming set x1
+Outlander 	PHB 	Athletics (STR), Survival (WIS) 	Any x1 	Musical instrument x1
+Sage 	PHB 	Arcana (INT), History (INT) 	Any x2 	None
+Soldier 	PHB 	Athletics (STR), Intimidation (CHA) 	None 	Gaming set x1, vehicles (land)
+Sailor 	PHB 	Athletics (STR), Perception (WIS) 	None 	Navigator's tools, vehicles (water)
+Urchin 	PHB 	Sleight of hand (DEX), Stealth (DEX) 	None 	Disguise kit, thieves' tools 
