@@ -138,7 +138,7 @@ namespace CharacterCreator
     {
       if (BackgroundDict.TryGetValue(cbBackgrounds.SelectedItem.ToString(), out Background background))
       {
-        UpdateBackgroundInfo(background);
+        UpdateBackgroundInfo(background); 
       }
     }
 
@@ -164,7 +164,51 @@ namespace CharacterCreator
       txtblkFavoredStats.Text = characterClass.FavoredStats;
       txtblkClassProficiencies.Text = characterClass.ClassProficiencies;
       txtblkClassSavingThrows.Text = characterClass.SavingThrows;
-      txtblkClassSkillProfs.Text = characterClass.ClassSkillOptions;
+      txtblkClassSkillProfs.Text = "Choose " + characterClass.NumberOfSkills + " from: " + characterClass.ClassSkillOptions;
+
+      
+      cbSkill1.Items.Add(characterClass.ClassSkillOptions.Split(','));
+      cbSkill2.Items.Add(characterClass.ClassSkillOptions.Split(','));
+      cbSkill3.Items.Add(characterClass.ClassSkillOptions.Split(','));
+      cbSkill4 .Items.Add(characterClass.ClassSkillOptions.Split(','));
+
+      string skills = characterClass.ClassSkillOptions;
+      string[] skillarray = skills.Split(',');
+
+      for (int i = 0; i < skillarray.Length; i++)
+      {
+        if(skillarray[i].Trim() != "")
+        {
+          cbSkill1.Items.Add(skillarray[i].Trim());
+          cbSkill2.Items.Add(skillarray[i].Trim());
+          cbSkill3.Items.Add(skillarray[i].Trim());
+          cbSkill4.Items.Add(skillarray[i].Trim());
+        }
+        
+      }   
+
+      if (characterClass.NumberOfSkills == 2)
+      {
+        cbSkill1.Visibility = Visibility.Visible;
+        cbSkill2.Visibility = Visibility.Visible;
+        cbSkill3.Visibility = Visibility.Hidden;
+        cbSkill4.Visibility = Visibility.Hidden;
+      }
+      if (characterClass.NumberOfSkills == 3)
+      {
+        cbSkill1.Visibility = Visibility.Visible;
+        cbSkill2.Visibility = Visibility.Visible;
+        cbSkill3.Visibility = Visibility.Visible;
+        cbSkill4.Visibility = Visibility.Hidden;
+      }
+      if (characterClass.NumberOfSkills == 4)
+      {
+        cbSkill1.Visibility = Visibility.Visible;
+        cbSkill2.Visibility = Visibility.Visible;
+        cbSkill3.Visibility = Visibility.Visible;
+        cbSkill4.Visibility = Visibility.Visible;
+      }
+
     }
 
     private void CbRaces_SelectionChanged(object sender, SelectionChangedEventArgs e)
