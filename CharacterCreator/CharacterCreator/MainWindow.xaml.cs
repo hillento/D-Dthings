@@ -164,6 +164,7 @@ namespace CharacterCreator
       txtblkFavoredStats.Text = characterClass.FavoredStats;
       txtblkClassProficiencies.Text = characterClass.ClassProficiencies;
       txtblkClassSavingThrows.Text = characterClass.SavingThrows;
+      txtblkClassSkillProfs.Text = characterClass.ClassSkillOptions;
     }
 
     private void CbRaces_SelectionChanged(object sender, SelectionChangedEventArgs e)

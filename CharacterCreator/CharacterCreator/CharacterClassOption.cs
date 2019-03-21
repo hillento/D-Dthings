@@ -16,6 +16,7 @@ namespace CharacterCreator
       FavoredStats = ClassInfo[3];
       ClassProficiencies = ClassInfo[4];
       SavingThrows = ClassInfo[5];
+      ClassSkillOptions = ClassInfo[6];
 
       GetSavingThrows();
   }
@@ -54,6 +55,7 @@ namespace CharacterCreator
     public string FavoredStats { get; set; }
     public string ClassProficiencies { get; set; }
     public string SavingThrows { get; set; }
+    public string ClassSkillOptions { get; set; }
 
     public bool StrSavingThrow { get; set; }
     public bool DexSavingThrow { get; set; }

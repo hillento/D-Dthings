@@ -28,10 +28,65 @@ namespace CharacterCreator
 
       SavingThrows();
       SetStats();
+      SetPassives();
+      SetSkills();
 
      
       
       
+    }
+
+    private void SetSkills()
+    {
+
+      myCharacter.SkillBonuses = myCharacter.SetSkillBonuses();
+
+      cbAcrobatics.IsChecked = myCharacter.Acrobatics;
+      cbAnimalHandling.IsChecked = myCharacter.AnimalHandling;
+      cbArcana.IsChecked = myCharacter.Arcana;
+      cbAthletics.IsChecked = myCharacter.Athletics;
+      cbDeception.IsChecked = myCharacter.Deception;
+      cbHistory.IsChecked = myCharacter.History;
+      cbInsight.IsChecked = myCharacter.Insight;
+      cbIntimidation.IsChecked = myCharacter.Intimidation;
+      cbInvestigation.IsChecked = myCharacter.Investigation;
+      cbMedicine.IsChecked = myCharacter.Medicine;
+      cbNature.IsChecked = myCharacter.Nature;
+      cbPerception.IsChecked = myCharacter.Perception;
+      cbPerformance.IsChecked = myCharacter.Performance;
+      cbPersuasion.IsChecked = myCharacter.Persuasion;
+      cbReligion.IsChecked = myCharacter.Religion;
+      cbSlightOfHand.IsChecked = myCharacter.SleightOfHand;
+      cbStealth.IsChecked = myCharacter.Stealth;
+      cbSurvival.IsChecked = myCharacter.Survival;
+
+     
+
+      lblAcrobatics.Content = myCharacter.SkillBonuses[0];
+      lblAnimalHandling.Content = myCharacter.SkillBonuses[1];
+      lblArcana.Content = myCharacter.SkillBonuses[2];
+      lblAthletics.Content = myCharacter.SkillBonuses[3];
+      lblDeception.Content = myCharacter.SkillBonuses[4];
+      lblHistory.Content = myCharacter.SkillBonuses[5];
+      lblInsight.Content = myCharacter.SkillBonuses[6];
+      lblIntimidation.Content = myCharacter.SkillBonuses[7];
+      lblInvestigation.Content = myCharacter.SkillBonuses[8];
+      lblMedicine.Content = myCharacter.SkillBonuses[9];
+      lblNature.Content = myCharacter.SkillBonuses[10];
+      lblPerception.Content = myCharacter.SkillBonuses[11];
+      lblPerformance.Content = myCharacter.SkillBonuses[12];
+      lblPersuasion.Content = myCharacter.SkillBonuses[13];
+      lblReligion.Content = myCharacter.SkillBonuses[14];
+      lblSleightOfHand.Content = myCharacter.SkillBonuses[15];
+      lblStealth.Content = myCharacter.SkillBonuses[16];
+      lblSurvival.Content = myCharacter.SkillBonuses[17];
+    }
+
+    private void SetPassives()
+    {
+      lblProficiencyBonus.Content = myCharacter.ProficiencyBonus;
+      lblInspiration.Content = myCharacter.InspirationPoints;
+      lblPassivePerception.Content = myCharacter.PassivePerception;
     }
 
     private void SetStats()

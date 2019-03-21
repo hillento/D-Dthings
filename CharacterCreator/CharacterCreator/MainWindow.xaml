@@ -8,11 +8,11 @@
         Title="MainWindow" Height="800" Width="1200">
   <Grid>
     <Grid.RowDefinitions>
+      <RowDefinition Height="5*"/>
+      <RowDefinition Height="5*"/>
+      <RowDefinition Height="5*"/>
+      <RowDefinition Height="4*"/>
       <RowDefinition Height="2*"/>
-      <RowDefinition Height="2*"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="*"/>
@@ -25,7 +25,7 @@
 
     <GroupBox Header="BackGround"
               Grid.ColumnSpan="2"
-              Grid.RowSpan="2"
+              Grid.RowSpan="3"
               Margin="10">
       <Grid>
         <Grid.ColumnDefinitions>
@@ -33,13 +33,13 @@
           <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
+          <RowDefinition Height="35"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <ComboBox x:Name="cbBackgrounds"
                   Grid.ColumnSpan="2"
@@ -62,11 +62,11 @@
                    TextWrapping="Wrap"/>
         <Label Content="Languages"
                Grid.Column="0"
-               Grid.Row="2"
+               Grid.Row="3"
                FontSize="15"/>
         <TextBlock x:Name="txtblkBackgroundLangs"
                    Grid.Column="1"
-                   Grid.Row="2"
+                   Grid.Row="3"
                    FontSize="12"
                    VerticalAlignment="Center" 
                    Height="30" 
@@ -74,11 +74,11 @@
                    TextWrapping="Wrap"/>
         <Label Content="Tools"
                Grid.Column="0"
-               Grid.Row="3"
+               Grid.Row="5"
                FontSize="15"/>
         <TextBlock x:Name="txtblkBackgroundTools"
                    Grid.Column="1"
-                   Grid.Row="3"
+                   Grid.Row="5"
                    FontSize="12"
                    VerticalAlignment="Center" 
                    Height="30" 
@@ -90,7 +90,7 @@
 
     <GroupBox Header="Class"
               Grid.ColumnSpan="2"
-              Grid.RowSpan="2"
+              Grid.RowSpan="3"
               Grid.Column="2"
               Margin="10">
       <Grid>
@@ -99,13 +99,14 @@
           <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+          <RowDefinition Height="35"/>
+          <RowDefinition Height="3*"/>
           <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
+          <RowDefinition Height="3*"/>
           <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
+          <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <ComboBox x:Name="cbCharacterClasses"
                   Grid.ColumnSpan="2"
@@ -115,7 +116,6 @@
                Grid.Column="0"
                Grid.Row="1"
                FontSize="15" 
-               Height="30" 
                Margin="5"/>
         <TextBlock x:Name="txtblkClassDesc"
                Grid.Column="1"
@@ -133,7 +133,6 @@
                Grid.Row="3"
                FontSize="12"
                Height="30" 
-               Margin="5,5"
                TextWrapping="WrapWithOverflow"/>
         <Label Content="Favored Stats"
                Grid.Column="0"
@@ -144,7 +143,6 @@
                Grid.Row="4"
                FontSize="12"
                Height="30"
-               Margin="5,5"
                TextWrapping="WrapWithOverflow"/>
         <Label Content="Proficiencies"
                Grid.Column="0"
@@ -153,7 +151,6 @@
         <TextBlock x:Name="txtblkClassProficiencies"
                Grid.Column="1"
                Grid.Row="5"
-               Grid.RowSpan="2"
                FontSize="12"
                Margin="5"
                TextWrapping="WrapWithOverflow"/>
@@ -164,7 +161,18 @@
         <TextBlock x:Name="txtblkClassSavingThrows"
                Grid.Column="1"
                Grid.Row="6"
-               Grid.RowSpan="2"
+               Grid.RowSpan="1"
+               FontSize="12"
+               Margin="5"
+               TextWrapping="WrapWithOverflow"/>
+        <Label Content="Skill Proficiencies"
+               Grid.Column="0"
+               Grid.Row="7"
+               FontSize="15"/>
+        <TextBlock x:Name="txtblkClassSkillProfs"
+               Grid.Column="1"
+               Grid.Row="7"
+               Grid.RowSpan="1"
                FontSize="12"
                Margin="5"
                TextWrapping="WrapWithOverflow"/>
@@ -173,7 +181,7 @@
 
     <GroupBox Header="Race"
               Grid.ColumnSpan="2"
-              Grid.RowSpan="2"
+              Grid.RowSpan="3"
               Grid.Column="4"
               Margin="10">
       <Grid>
@@ -184,13 +192,13 @@
           <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
+          <RowDefinition Height="35"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
+          <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <ComboBox x:Name="cbRaces"
                   Grid.ColumnSpan="4"
@@ -318,24 +326,20 @@
       </Grid>
     </GroupBox>
     <GroupBox Header="Assign Rolls"
-              Grid.ColumnSpan="6"
-              Grid.Row="2"
-              Grid.RowSpan="2"
-              FontSize="15"
+              Grid.ColumnSpan="5"
+              Grid.Row="3"
+              Grid.RowSpan="1"
               Margin="5">
       <Grid>
         <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="21*"/>
-          <ColumnDefinition Width="146*"/>
-          <ColumnDefinition Width="167*"/>
-          <ColumnDefinition Width="167*"/>
-          <ColumnDefinition Width="167*"/>
-          <ColumnDefinition Width="167*"/>
-          <ColumnDefinition Width="168*"/>
-          <ColumnDefinition Width="167*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-          <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
           <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -343,48 +347,55 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15" 
-               Grid.Column="1" 
+               Grid.Column="0" 
                Margin="5"/>
         <ComboBox  
                x:Name="cbStat2"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="2" Margin="5"/>
+               Grid.Column="1" 
+               Margin="5"/>
         <ComboBox x:Name="cbStat3"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="3" Margin="5"/>
+               Grid.Column="2" 
+               Margin="5"/>
         <ComboBox x:Name="cbStat4"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="4" Margin="5"/>
+               Grid.Column="3"
+               Margin="5"/>
         <ComboBox x:Name="cbStat5"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="5" Margin="5"/>
+               Grid.Column="4" 
+               Margin="5"/>
         <ComboBox x:Name="cbStat6"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="6" Margin="5"/>
+               Grid.Column="5" 
+               Margin="5"/>
         <Label x:Name="lblStatName1"
                Content="Strength"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
                Visibility="Hidden" 
-               Grid.Column="1" 
+               Grid.Column="0" 
+               Grid.Row="0"
                Margin="5"/>
         <Label x:Name="lblStatName2"
                Content="Dexterity"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="2"
+               Grid.Column="1" 
+               Grid.Row="0"
                Visibility="Hidden" 
                Margin="5"/>
         <Label x:Name="lblStatName3"
@@ -392,7 +403,8 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="3"
+               Grid.Column="2" 
+               Grid.Row="0"
                Visibility="Hidden" 
                Margin="5"/>
         <Label x:Name="lblStatName4"
@@ -400,7 +412,8 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="4"
+               Grid.Column="3" 
+               Grid.Row="0"
                Visibility="Hidden" 
                Margin="5"/>
         <Label x:Name="lblStatName5"
@@ -408,7 +421,8 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="5"
+               Grid.Column="4" 
+               Grid.Row="0"
                Visibility="Hidden" 
                Margin="5"/>
         <Label x:Name="lblStatName6"
@@ -416,110 +430,116 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
                FontSize="15"
-               Grid.Column="6"
+               Grid.Column="5" 
+               Grid.Row="0"
                Visibility="Hidden" 
                Margin="5"/>
         <Label x:Name="lblStat1"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
-                 Width="45"
                  Grid.Row="1" 
-                 Grid.Column="1"
+                 Grid.Column="0"
                  Margin="5"/>
         <Label x:Name="lblStat2"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
-                 Width="45"
                  Grid.Row="1"
-                 Grid.Column="2" />
+                 Grid.Column="1" />
         <Label x:Name="lblStat3"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
-                 Width="45"
                  Grid.Row="1"
-                 Grid.Column="3" />
+                 Grid.Column="2" />
         <Label x:Name="lblStat4"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
-                 Width="45"
                  Grid.Row="1"
-                 Grid.Column="4" />
+                 Grid.Column="3" />
         <Label x:Name="lblStat5"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
-                 Width="45"
                  Grid.Row="1"
-                 Grid.Column="5" />
+                 Grid.Column="4" />
         <Label x:Name="lblStat6"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
-                 Width="46"
                  Grid.Row="1"
-                 Grid.Column="6" />
+                 Grid.Column="5" />
         <TextBox x:Name="txtbxSelfRolledStr"
                  Grid.Column="0"
                  Grid.Row="1"
                  Margin="15"
                  Visibility="Hidden" 
-                 Grid.ColumnSpan="2"
                  Text=""/>
         <TextBox x:Name="txtbxSelfRolledDex"
-                 Grid.Column="2"
+                 Grid.Column="1"
                  Grid.Row="1"
                  Margin="15"
                  Visibility="Hidden"
                  Text=""/>
         <TextBox x:Name="txtbxSelfRolledCon"
-                 Grid.Column="3"
+                 Grid.Column="2"
                  Grid.Row="1"
                  Margin="15"
                  Visibility="Hidden"
                  Text=""/>
         <TextBox x:Name="txtbxSelfRolledInt"
-                 Grid.Column="4"
+                 Grid.Column="3"
                  Grid.Row="1"
                  Margin="15"
                  Visibility="Hidden"
                  Text=""/>
         <TextBox x:Name="txtbxSelfRolledWis"
-                 Grid.Column="5"
+                 Grid.Column="4"
                  Grid.Row="1"
                  Margin="15"
                  Visibility="Hidden"
                  Text=""/>
         <TextBox x:Name="txtbxSelfRolledCha"
-                 Grid.Column="6"
+                 Grid.Column="5"
                  Grid.Row="1"
                  Margin="15"
                  Visibility="Hidden"
                  Text=""/>
+
+      </Grid>
+    </GroupBox>
+    <GroupBox Header="Roll Options"
+              Grid.Column="5"
+              Grid.Row="3"
+              Margin="5">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Button x:Name="btnSuicideRoll"
                 Content="Suicide Roll"
-                Grid.Column="7"
                 Grid.Row="1"
                 Margin="5"
                 Click="BtnSuicideRoll_Click"/>
         <Button x:Name="btnComputerRoll"
                 Content="Computer Rolled"
-                Grid.Column="7"
                 Grid.Row="0"
                 Margin="5"
                 Click="BtnComputerRoll_Click"/>
         <Button x:Name="btnSelfRolled"
                 Content="Self Rolled"
-                Grid.Column="7"
                 Grid.Row="2"
                 Margin="5"
                 Click="BtnSelfRolled_Click"/>
       </Grid>
+
     </GroupBox>
     <Button Content="Generate Character"
             x:Name="btnGenerateCharacter"
             Grid.Column="2"
             Grid.ColumnSpan="2"
-            Grid.Row="4"
+            Grid.Row="5"
             Margin="10"
             FontSize="25"
             Click="BtnGenerateCharacter_Click"/>
+
   </Grid>
 </Window>
