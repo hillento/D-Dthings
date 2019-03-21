@@ -20,81 +20,80 @@ namespace CharacterCreator
       NumberOfSkills = int.Parse(ClassInfo[7]);
 
       GetSavingThrows();
-      GetClassSKills();
   }
 
-    private void GetClassSKills()
+    public void GetClassSkills(string SelectedSkills)
     {
       
-        if (ClassSkillOptions.Contains("Acrobatics"))
+        if (SelectedSkills.Contains("Acrobatics"))
         {
           Acrobatics = true;
         }
-        if (ClassSkillOptions.Contains("Animal Handling"))
+        if (SelectedSkills.Contains("Animal Handling"))
         {
           AnimalHandling = true;
         }
-        if (ClassSkillOptions.Contains("Arcaba"))
+        if (SelectedSkills.Contains("Arcaba"))
         {
           Arcana = true;
         }
-        if (ClassSkillOptions.Contains("Athletics"))
+        if (SelectedSkills.Contains("Athletics"))
         {
           Athletics = true;
         }
-        if (ClassSkillOptions.Contains("Deception"))
+        if (SelectedSkills.Contains("Deception"))
         {
           Deception = true;
         }
-        if (ClassSkillOptions.Contains("History"))
+        if (SelectedSkills.Contains("History"))
         {
           History = true;
         }
-        if (ClassSkillOptions.Contains("Insight"))
+        if (SelectedSkills.Contains("Insight"))
         {
           Insight = true;
         }
-        if (ClassSkillOptions.Contains("Intimidation"))
+        if (SelectedSkills.Contains("Intimidation"))
         {
           Intimidation = true;
         }
-        if (ClassSkillOptions.Contains("Investigation"))
+        if (SelectedSkills.Contains("Investigation"))
         {
           Investigation = true;
         }
-        if (ClassSkillOptions.Contains("Medicine"))
+        if (SelectedSkills.Contains("Medicine"))
         {
           Medicine = true;
         }
-        if (ClassSkillOptions.Contains("Nature"))
+        if (SelectedSkills.Contains("Nature"))
         {
           Nature = true;
         }
-        if (ClassSkillOptions.Contains("Perception"))
+        if (SelectedSkills.Contains("Perception"))
         {
           Perception = true;
         }
-        if (ClassSkillOptions.Contains("Performance"))
+        if (SelectedSkills.Contains("Performance"))
         {
           Performance = true;
         }
-        if (ClassSkillOptions.Contains("Persuasion"))
+        if (SelectedSkills.Contains("Persuasion"))
         {
           Persuasion = true;
         }
-        if (ClassSkillOptions.Contains("Religion"))
+        if (SelectedSkills.Contains("Religion"))
         {
           Religion = true;
         }
-        if (ClassSkillOptions.Contains("Sleight of Hand"))
+        if (SelectedSkills.Contains("Sleight of Hand"))
         {
           SleightOfHand = true;
         }
-        if (ClassSkillOptions.Contains("Stealth"))
+        if (SelectedSkills.Contains("Stealth"))
         {
           Stealth = true;
         }
-        if (ClassSkillOptions.Contains("Survival"))
+        if (SelectedSkills.Contains("Survival"))
         {
           Survival = true;
         }

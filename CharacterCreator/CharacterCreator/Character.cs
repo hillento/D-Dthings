@@ -22,53 +22,86 @@ namespace CharacterCreator
 
     }
 
-    
+
     private bool[] SetSkillProfs(Background myBackground, CharacterClassOption characterClass
       )
     {
 
+      bool[] BackgroundSkillProfsArray = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+
+      BackgroundSkillProfsArray[0] = myBackground.Acrobatics;
+      BackgroundSkillProfsArray[1] = myBackground.AnimalHandling;
+      BackgroundSkillProfsArray[2] = myBackground.Arcana;
+      BackgroundSkillProfsArray[3] = myBackground.Athletics;
+      BackgroundSkillProfsArray[4] = myBackground.Deception;
+      BackgroundSkillProfsArray[5] = myBackground.History;
+      BackgroundSkillProfsArray[6] = myBackground.Insight;
+      BackgroundSkillProfsArray[7] = myBackground.Intimidation;
+      BackgroundSkillProfsArray[8] = myBackground.Investigation;
+      BackgroundSkillProfsArray[9] = myBackground.Medicine;
+      BackgroundSkillProfsArray[10] = myBackground.Nature;
+      BackgroundSkillProfsArray[11] = myBackground.Perception;
+      BackgroundSkillProfsArray[12] = myBackground.Performance;
+      BackgroundSkillProfsArray[13] = myBackground.Persuasion;
+      BackgroundSkillProfsArray[14] = myBackground.Religion;
+      BackgroundSkillProfsArray[15] = myBackground.SleightOfHand;
+      BackgroundSkillProfsArray[16] = myBackground.Stealth;
+      BackgroundSkillProfsArray[17] = myBackground.Survival;
+
+      bool[] ClassSkillProfsArray = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+
+      ClassSkillProfsArray[0] = characterClass.Acrobatics;
+      ClassSkillProfsArray[1] = characterClass.AnimalHandling;
+      ClassSkillProfsArray[2] = characterClass.Arcana;
+      ClassSkillProfsArray[3] = characterClass.Athletics;
+      ClassSkillProfsArray[4] = characterClass.Deception;
+      ClassSkillProfsArray[5] = characterClass.History;
+      ClassSkillProfsArray[6] = characterClass.Insight;
+      ClassSkillProfsArray[7] = characterClass.Intimidation;
+      ClassSkillProfsArray[8] = characterClass.Investigation;
+      ClassSkillProfsArray[9] = characterClass.Medicine;
+      ClassSkillProfsArray[10] = characterClass.Nature;
+      ClassSkillProfsArray[11] = characterClass.Perception;
+      ClassSkillProfsArray[12] = characterClass.Performance;
+      ClassSkillProfsArray[13] = characterClass.Persuasion;
+      ClassSkillProfsArray[14] = characterClass.Religion;
+      ClassSkillProfsArray[15] = characterClass.SleightOfHand;
+      ClassSkillProfsArray[16] = characterClass.Stealth;
+      ClassSkillProfsArray[17] = characterClass.Survival;
+
+
       bool[] SkillProfsArray = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
-
-      Acrobatics = myBackground.Acrobatics;
-      AnimalHandling = myBackground.AnimalHandling;
-      Arcana = myBackground.Arcana;
-      Athletics = myBackground.Athletics;
-      Deception = myBackground.Deception;
-      History = myBackground.History;
-      Insight = myBackground.Insight;
-      Intimidation = myBackground.Intimidation;
-      Investigation = myBackground.Investigation;
-      Medicine = myBackground.Medicine;
-      Nature = myBackground.Nature;
-      Perception = myBackground.Perception;
-      Performance = myBackground.Performance;
-      Persuasion = myBackground.Persuasion;
-      Religion = myBackground.Religion;
-      SleightOfHand = myBackground.SleightOfHand;
-      Stealth = myBackground.Stealth;
-      Survival = myBackground.Survival;
-
-      Acrobatics = characterClass.Acrobatics;
-      AnimalHandling = characterClass.AnimalHandling;
-      Arcana = characterClass.Arcana;
-      Athletics = characterClass.Athletics;
-      Deception = characterClass.Deception;
-      History = characterClass.History;
-      Insight = characterClass.Insight;
-      Intimidation = characterClass.Intimidation;
-      Investigation = characterClass.Investigation;
-      Medicine = characterClass.Medicine;
-      Nature = characterClass.Nature;
-      Perception = characterClass.Perception;
-      Performance = characterClass.Performance;
-      Persuasion = characterClass.Persuasion;
-      Religion = characterClass.Religion;
-      SleightOfHand = characterClass.SleightOfHand;
-      Stealth = characterClass.Stealth;
-      Survival = characterClass.Survival;
+      for (int i = 0; i < ClassSkillProfsArray.Length; i++)
+      {
+        if (ClassSkillProfsArray[i] || BackgroundSkillProfsArray[i])
+        {
+          SkillProfsArray[i] = true;
+        }
+        else
+        {
+          SkillProfsArray[i] = false;
+        }
+      }
+      Acrobatics = SkillProfsArray[0];
+      AnimalHandling = SkillProfsArray[1];
+      Arcana = SkillProfsArray[2];
+      Athletics = SkillProfsArray[3];
+      Deception = SkillProfsArray[4];
+      History = SkillProfsArray[5];
+      Insight = SkillProfsArray[6];
+      Intimidation = SkillProfsArray[7];
+      Investigation = SkillProfsArray[8];
+      Medicine = SkillProfsArray[9];
+      Nature = SkillProfsArray[10];
+      Perception = SkillProfsArray[11];
+      Performance = SkillProfsArray[12];
+      Persuasion = SkillProfsArray[13];
+      Religion = SkillProfsArray[14];
+      SleightOfHand = SkillProfsArray[15];
+      Stealth = SkillProfsArray[16];
+      Survival = SkillProfsArray[17];
 
 
-      
 
       return SkillProfsArray;
     }
@@ -103,7 +136,7 @@ namespace CharacterCreator
 
     public int[] SetSkillBonuses()
     {
-      int[] SkillBonuses = { DexBonus, WisBonus, IntBonus, StrBonus, ChaBonus, IntBonus, WisBonus, ChaBonus, IntBonus, WisBonus, IntBonus, WisBonus, ChaBonus, ChaBonus, IntBonus, DexBonus, DexBonus, WisBonus};
+      int[] SkillBonuses = { DexBonus, WisBonus, IntBonus, StrBonus, ChaBonus, IntBonus, WisBonus, ChaBonus, IntBonus, WisBonus, IntBonus, WisBonus, ChaBonus, ChaBonus, IntBonus, DexBonus, DexBonus, WisBonus };
 
       for (int i = 0; i < SkillBonuses.Length; i++)
       {

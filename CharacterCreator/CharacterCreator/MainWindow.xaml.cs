@@ -32,6 +32,7 @@ namespace CharacterCreator
     bool ComputerRoll = false;
     bool SelfRoll = false;
     int[] uStatBlock= { 0, 0, 0, 0, 0, 0 };
+    string SelectedSkillString;
     public MainWindow()
     {
       InitializeComponent();
@@ -390,7 +391,9 @@ namespace CharacterCreator
             if (cbStat1.SelectedIndex != 6 && cbStat2.SelectedIndex != 6 && cbStat3.SelectedIndex != 6 && cbStat4.SelectedIndex != 6 && cbStat5.SelectedIndex != 6 && cbStat6.SelectedIndex != 6)
             {
                 CreateMyCharacter();
-                
+
+              
+
             }
             else
             {
@@ -418,6 +421,9 @@ namespace CharacterCreator
       BackgroundDict.TryGetValue(cbBackgrounds.SelectedItem.ToString(), out Background background);
       CharacterClassDict.TryGetValue(cbCharacterClasses.SelectedItem.ToString(), out CharacterClassOption characterClass);
       RaceDict.TryGetValue(cbRaces.SelectedItem.ToString(), out Race race);
+
+      SelectedSkillString = cbSkill1.Text + cbSkill2.Text + cbSkill3.Text + cbSkill4.Text;
+      characterClass.GetClassSkills(SelectedSkillString);
 
       myCharacter = new Character(background, characterClass, race);
 
