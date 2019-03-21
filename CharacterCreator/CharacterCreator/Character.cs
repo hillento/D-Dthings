@@ -17,13 +17,14 @@ namespace CharacterCreator
       CharacterLevel = 1;
       SetProficiencyBonusBool();
       SavingThrowBoolArray = SetSavingThrows(myCharacterClass);
-      SkillProfsArray = SetSkillProfs(myBackground);
+      SkillProfsArray = SetSkillProfs(myBackground, myCharacterClass);
 
 
     }
 
     
-    private bool[] SetSkillProfs(Background myBackground)
+    private bool[] SetSkillProfs(Background myBackground, CharacterClassOption characterClass
+      )
     {
 
       bool[] SkillProfsArray = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
@@ -47,25 +48,27 @@ namespace CharacterCreator
       Stealth = myBackground.Stealth;
       Survival = myBackground.Survival;
 
+      Acrobatics = characterClass.Acrobatics;
+      AnimalHandling = characterClass.AnimalHandling;
+      Arcana = characterClass.Arcana;
+      Athletics = characterClass.Athletics;
+      Deception = characterClass.Deception;
+      History = characterClass.History;
+      Insight = characterClass.Insight;
+      Intimidation = characterClass.Intimidation;
+      Investigation = characterClass.Investigation;
+      Medicine = characterClass.Medicine;
+      Nature = characterClass.Nature;
+      Perception = characterClass.Perception;
+      Performance = characterClass.Performance;
+      Persuasion = characterClass.Persuasion;
+      Religion = characterClass.Religion;
+      SleightOfHand = characterClass.SleightOfHand;
+      Stealth = characterClass.Stealth;
+      Survival = characterClass.Survival;
 
-      SkillProfsArray[0] = Acrobatics;
-      SkillProfsArray[1] = AnimalHandling;
-      SkillProfsArray[2] = Arcana;
-      SkillProfsArray[3] = Athletics;
-      SkillProfsArray[4] = Deception;
-      SkillProfsArray[5] = History;
-      SkillProfsArray[6] = Insight;
-      SkillProfsArray[7] = Intimidation;
-      SkillProfsArray[8] = Investigation;
-      SkillProfsArray[9] = Medicine;
-      SkillProfsArray[10] = Nature;
-      SkillProfsArray[11] = Perception;
-      SkillProfsArray[12] = Performance;
-      SkillProfsArray[13] = Persuasion;
-      SkillProfsArray[14] = Religion;
-      SkillProfsArray[15] = SleightOfHand;
-      SkillProfsArray[16] = Stealth;
-      SkillProfsArray[17] = Survival;
+
+      
 
       return SkillProfsArray;
     }

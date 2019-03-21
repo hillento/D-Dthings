@@ -16,10 +16,10 @@ namespace CharacterCreator
       Languages = BgInfo[3];
       Tools = BgInfo[4];
 
-      GetSkills();
+      GetBackgroundSkills();
     }
 
-    private void GetSkills()
+    private void GetBackgroundSkills()
     {
       if (Skills.Contains("Acrobatics"))
       {

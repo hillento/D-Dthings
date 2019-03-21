@@ -171,24 +171,9 @@ namespace CharacterCreator
       txtblkClassSavingThrows.Text = characterClass.SavingThrows;
       txtblkClassSkillProfs.Text = "Choose " + characterClass.NumberOfSkills + " from: " + characterClass.ClassSkillOptions;
 
-      
-      cbSkill1.Items.Add(characterClass.ClassSkillOptions.Split(','));
-      cbSkill2.Items.Add(characterClass.ClassSkillOptions.Split(','));
-      cbSkill3.Items.Add(characterClass.ClassSkillOptions.Split(','));
-      cbSkill4 .Items.Add(characterClass.ClassSkillOptions.Split(','));
 
       string skills = characterClass.ClassSkillOptions;
       string[] skillarray = skills.Split(',');
-
-      /*cbSkill1.ItemsSource = skillarray;
-      cbSkill1.SelectedIndex = 0;
-      cbSkill2.ItemsSource = skillarray;
-      cbSkill2.SelectedIndex = 0;
-      cbSkill3.ItemsSource = skillarray;
-      cbSkill3.SelectedIndex = 0;
-      cbSkill4.ItemsSource = skillarray;
-      cbSkill4.SelectedIndex = 0;*/
-
 
       for (int i = 0; i < skillarray.Length; i++)
       {
