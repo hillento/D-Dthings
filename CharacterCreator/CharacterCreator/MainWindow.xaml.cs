@@ -159,6 +159,11 @@ namespace CharacterCreator
 
     private void UpdateClassInfo(CharacterClassOption characterClass)
     {
+      cbSkill1.Items.Clear();
+      cbSkill2.Items.Clear();
+      cbSkill3.Items.Clear();
+      cbSkill4.Items.Clear();
+
       txtblkClassDesc.Text = characterClass.Description;
       txtblkHitDice.Text = "d" + characterClass.HitDiceName;
       txtblkFavoredStats.Text = characterClass.FavoredStats;
@@ -175,6 +180,16 @@ namespace CharacterCreator
       string skills = characterClass.ClassSkillOptions;
       string[] skillarray = skills.Split(',');
 
+      /*cbSkill1.ItemsSource = skillarray;
+      cbSkill1.SelectedIndex = 0;
+      cbSkill2.ItemsSource = skillarray;
+      cbSkill2.SelectedIndex = 0;
+      cbSkill3.ItemsSource = skillarray;
+      cbSkill3.SelectedIndex = 0;
+      cbSkill4.ItemsSource = skillarray;
+      cbSkill4.SelectedIndex = 0;*/
+
+
       for (int i = 0; i < skillarray.Length; i++)
       {
         if(skillarray[i].Trim() != "")
@@ -185,7 +200,7 @@ namespace CharacterCreator
           cbSkill4.Items.Add(skillarray[i].Trim());
         }
         
-      }   
+      }
 
       if (characterClass.NumberOfSkills == 2)
       {
