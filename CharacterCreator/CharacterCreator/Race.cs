@@ -38,6 +38,6 @@ namespace CharacterCreator
     public int AssignableBonus { get; set; }
     public int DarkVision { get; set; }
 
-
+    
   }
 }

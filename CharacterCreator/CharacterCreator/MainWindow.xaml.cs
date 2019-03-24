@@ -32,6 +32,9 @@ namespace CharacterCreator
     bool ComputerRoll = false;
     bool SelfRoll = false;
     int[] uStatBlock= { 0, 0, 0, 0, 0, 0 };
+    int[] AssignableStat1 = { 0, 0, 0, 0, 0, 0 };
+    int[] AssignableStat2 = { 0, 0, 0, 0, 0, 0 };
+    string[] BackgroundProfs = { "", "" };
     string SelectedSkillString;
     public MainWindow()
     {
@@ -148,6 +151,7 @@ namespace CharacterCreator
       txtblkBackgroundSkills.Text = background.Skills;
       txtblkBackgroundLangs.Text = background.Languages;
       txtblkBackgroundTools.Text = background.Tools;
+      BackgroundProfs = background.Skills.Split(',');
     }
 
     private void CbCharacterClasses_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -157,6 +161,8 @@ namespace CharacterCreator
         UpdateClassInfo(characterClass);
       }
     }
+
+  
 
     private void UpdateClassInfo(CharacterClassOption characterClass)
     {
@@ -184,6 +190,13 @@ namespace CharacterCreator
           cbSkill2.Items.Add(skillarray[i].Trim());
           cbSkill3.Items.Add(skillarray[i].Trim());
           cbSkill4.Items.Add(skillarray[i].Trim());
+        }
+        if (skillarray[i].Contains(BackgroundProfs[1]) || skillarray[i].Contains(BackgroundProfs[0]))
+        {
+          cbSkill1.Items.Remove(skillarray[i].Trim());
+          cbSkill2.Items.Remove(skillarray[i].Trim());
+          cbSkill3.Items.Remove(skillarray[i].Trim());
+          cbSkill4.Items.Remove(skillarray[i].Trim());
         }
         
       }
@@ -216,13 +229,57 @@ namespace CharacterCreator
     {
       if (RaceDict.TryGetValue(cbRaces.SelectedItem.ToString(), out Race race))
       {
+        
         UpdateRaceInfo(race);
       }
 
     }
 
+    public void CbAssignableStat1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      AssignableStat1[0] = 0;
+      AssignableStat1[1] = 0;
+      AssignableStat1[2] = 0;
+      AssignableStat1[3] = 0;
+      AssignableStat1[4] = 0;
+      AssignableStat1[5] = 0;
+
+      AssignableStat1[cbAssignableStat1.SelectedIndex] = 1;
+      
+    }
+
+    private void CbAssignableStat2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      AssignableStat2[0] = 0;
+      AssignableStat2[1] = 0;
+      AssignableStat2[2] = 0;
+      AssignableStat2[3] = 0;
+      AssignableStat2[4] = 0;
+      AssignableStat2[5] = 0;
+
+      AssignableStat2[cbAssignableStat1.SelectedIndex] = 1;
+
+      
+    }
+
     private void UpdateRaceInfo(Race race)
     {
+
+      cbAssignableStat1.Items.Clear();
+      cbAssignableStat2.Items.Clear();
+      
+
+      string[] statnames = { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" };
+
+
+      for (int i = 0; i < statnames.Length; i++)
+      {
+        cbAssignableStat1.Items.Add(statnames[i]);
+        cbAssignableStat2.Items.Add(statnames[i]);
+      }
+
+      
+
       txtblkSize.Text = race.Size;
       txtblkSpeed.Text = race.Speed.ToString() + "ft";
       txtblkLanguage.Text = race.Language;
@@ -235,7 +292,21 @@ namespace CharacterCreator
       txtblkDarkWisBonus.Text = race.WisdomBonus.ToString();
       txtblkChaBonus.Text = race.CharismaBonus.ToString();
 
+      if (race.AssignableBonus == 1)
+      {
+
+        cbAssignableStat1.Visibility = Visibility.Visible;
+
+      }
+      else if (race.AssignableBonus == 2)
+      {
+        cbAssignableStat1.Visibility = Visibility.Visible;
+        cbAssignableStat2.Visibility = Visibility.Visible;
+      }
+
     }
+
+    
 
     private void BtnSuicideRoll_Click(object sender, RoutedEventArgs e)
     {
@@ -390,6 +461,8 @@ namespace CharacterCreator
           {
             if (cbStat1.SelectedIndex != 6 && cbStat2.SelectedIndex != 6 && cbStat3.SelectedIndex != 6 && cbStat4.SelectedIndex != 6 && cbStat5.SelectedIndex != 6 && cbStat6.SelectedIndex != 6)
             {
+              
+               
                 CreateMyCharacter();
 
               
@@ -444,12 +517,14 @@ namespace CharacterCreator
           uStatBlock[cbStat5.SelectedIndex] = (int)lblStat5.Content;
           uStatBlock[cbStat6.SelectedIndex] = (int)lblStat6.Content;
 
-          myCharacter.Strength = uStatBlock[0];
-          myCharacter.Dexterity = uStatBlock[1];
-          myCharacter.Constitution = uStatBlock[2];
-          myCharacter.Intelligence = uStatBlock[3];
-          myCharacter.Wisdom = uStatBlock[4];
-          myCharacter.Charisma = uStatBlock[5];
+          
+
+          myCharacter.Strength = uStatBlock[0] + race.StrengthBonus + AssignableStat1[0] + AssignableStat2[0];
+          myCharacter.Dexterity = uStatBlock[1] + race.DexterityBonus + AssignableStat1[1] + AssignableStat2[1];
+          myCharacter.Constitution = uStatBlock[2] + race.ConstitutionBonus + AssignableStat1[2] + AssignableStat2[2];
+          myCharacter.Intelligence = uStatBlock[3] + race.InteligenceBonus + AssignableStat1[3] + AssignableStat2[3];
+          myCharacter.Wisdom = uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4];
+          myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
           myCharacter.StatBonusArray = myCharacter.SetStatMods();
 
           sheetform = new CharacterSheet(myCharacter);
@@ -465,12 +540,12 @@ namespace CharacterCreator
       if (SuicideRoll)
       {
 
-        myCharacter.Strength = uStatBlock[0];
-        myCharacter.Dexterity = uStatBlock[1];
-        myCharacter.Constitution = uStatBlock[2];
-        myCharacter.Intelligence = uStatBlock[3];
-        myCharacter.Wisdom = uStatBlock[4];
-        myCharacter.Charisma = uStatBlock[5];
+        myCharacter.Strength = uStatBlock[0] + race.StrengthBonus + AssignableStat1[0] + AssignableStat2[0];
+        myCharacter.Dexterity = uStatBlock[1] + race.DexterityBonus + AssignableStat1[1] + AssignableStat2[1];
+        myCharacter.Constitution = uStatBlock[2] + race.ConstitutionBonus + AssignableStat1[2] + AssignableStat2[2];
+        myCharacter.Intelligence = uStatBlock[3] + race.InteligenceBonus + AssignableStat1[3] + AssignableStat2[3];
+        myCharacter.Wisdom = uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4];
+        myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
         myCharacter.StatBonusArray = myCharacter.SetStatMods();
 
         sheetform = new CharacterSheet(myCharacter);
@@ -498,12 +573,14 @@ namespace CharacterCreator
             uStatBlock[4] = int.Parse(txtbxSelfRolledStr.Text);
             uStatBlock[5] = int.Parse(txtbxSelfRolledStr.Text);
 
-            myCharacter.Strength = uStatBlock[0];
-            myCharacter.Dexterity = uStatBlock[1];
-            myCharacter.Constitution = uStatBlock[2];
-            myCharacter.Intelligence = uStatBlock[3];
-            myCharacter.Wisdom = uStatBlock[4];
-            myCharacter.Charisma = uStatBlock[5];
+
+
+            myCharacter.Strength = uStatBlock[0] + race.StrengthBonus + AssignableStat1[0] + AssignableStat2[0];
+            myCharacter.Dexterity = uStatBlock[1] + race.DexterityBonus + AssignableStat1[1] + AssignableStat2[1];
+            myCharacter.Constitution = uStatBlock[2] + race.ConstitutionBonus + AssignableStat1[2] + AssignableStat2[2];
+            myCharacter.Intelligence = uStatBlock[3] + race.InteligenceBonus + AssignableStat1[3] + AssignableStat2[3];
+            myCharacter.Wisdom = uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4];
+            myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
             myCharacter.StatBonusArray = myCharacter.SetStatMods();
 
             sheetform = new CharacterSheet(myCharacter);
@@ -521,5 +598,7 @@ namespace CharacterCreator
         }
       }
     }
+
+    
   }
 }

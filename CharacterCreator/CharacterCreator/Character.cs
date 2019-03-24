@@ -183,12 +183,12 @@ namespace CharacterCreator
       int[] statBonusArray = { 0, 0, 0, 0, 0, 0 };
 
 
-      statBonusArray[0] = (int)Math.Floor(((double)Strength - (double)10) / (double)2);
-      statBonusArray[1] = (int)Math.Floor(((double)Dexterity - (double)10) / (double)2);
-      statBonusArray[2] = (int)Math.Floor(((double)Constitution - (double)10) / (double)2);
-      statBonusArray[3] = (int)Math.Floor(((double)Intelligence - (double)10) / (double)2);
-      statBonusArray[4] = (int)Math.Floor(((double)Wisdom - (double)10) / (double)2);
-      statBonusArray[5] = (int)Math.Floor(((double)Charisma - (double)10) / (double)2);
+      statBonusArray[0] = (int)Math.Floor((Strength - (double)10) / 2);
+      statBonusArray[1] = (int)Math.Floor((Dexterity - (double)10) / 2);
+      statBonusArray[2] = (int)Math.Floor((Constitution - (double)10) / 2);
+      statBonusArray[3] = (int)Math.Floor((Intelligence - (double)10) / 2);
+      statBonusArray[4] = (int)Math.Floor((Wisdom - (double)10) / 2);
+      statBonusArray[5] = (int)Math.Floor((Charisma - (double)10) / 2);
 
       StrBonus = statBonusArray[0];
       DexBonus = statBonusArray[1];

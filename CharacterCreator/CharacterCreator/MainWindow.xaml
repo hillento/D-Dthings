@@ -365,6 +365,20 @@
                    Grid.Row="6"
                    FontSize="12"
                    Margin="5"/>
+        <ComboBox x:Name="cbAssignableStat1"
+                  Grid.Column="0"
+                  Grid.Row="6"
+                  Margin="5"
+                  VerticalAlignment="Center"
+                  Visibility="Hidden"
+                  SelectionChanged="CbAssignableStat1_SelectionChanged"/>
+        <ComboBox x:Name="cbAssignableStat2"
+                  Grid.Column="1"
+                  Grid.Row="6"
+                  VerticalAlignment="Center"
+                  Margin="5"
+                  Visibility="Hidden"
+                  SelectionChanged="CbAssignableStat2_SelectionChanged"/>
 
       </Grid>
     </GroupBox>
