@@ -200,25 +200,29 @@
                   Grid.Column="0"
                   Grid.Row="7"
                   Margin="5"
-                  Visibility="Hidden"/>
+                  Visibility="Hidden"
+                  SelectionChanged="CbSkill1_SelectionChanged"/>
         <ComboBox x:Name="cbSkill2"
                   Grid.ColumnSpan="4"
                   Grid.Column="4"
                   Grid.Row="7"
                   Margin="5"
-                  Visibility="Hidden"/>
+                  Visibility="Hidden"
+                  SelectionChanged="CbSkill2_SelectionChanged"/>
         <ComboBox x:Name="cbSkill3"
                   Grid.ColumnSpan="4"
                   Grid.Column="0"
                   Grid.Row="8"
                   Margin="5"
-                  Visibility="Hidden"/>
+                  Visibility="Hidden"
+                  SelectionChanged="CbSkill3_SelectionChanged"/>
         <ComboBox x:Name="cbSkill4"
                   Grid.ColumnSpan="4"
                   Grid.Column="4"
                   Grid.Row="8"
                   Margin="5"
-                  Visibility="Hidden"/>
+                  Visibility="Hidden"
+                  SelectionChanged="CbSkill4_SelectionChanged"/>
       </Grid>
     </GroupBox>
 

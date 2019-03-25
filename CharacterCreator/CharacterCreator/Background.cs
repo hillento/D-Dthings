@@ -16,7 +16,7 @@ namespace CharacterCreator
       Languages = BgInfo[3];
       Tools = BgInfo[4];
 
-      GetBackgroundSkills();
+      GetBackgroundSkills ();
     }
 
     private void GetBackgroundSkills()

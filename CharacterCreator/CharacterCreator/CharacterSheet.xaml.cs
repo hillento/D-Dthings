@@ -85,8 +85,9 @@ namespace CharacterCreator
     private void SetPassives()
     {
       lblProficiencyBonus.Content = myCharacter.ProficiencyBonus;
-      lblInspiration.Content = myCharacter.InspirationPoints;
+      lblInitiative.Content = myCharacter.DexBonus;
       lblPassivePerception.Content = myCharacter.PassivePerception;
+      lblHitPoints.Content = myCharacter.HitPoints;
     }
 
     private void SetStats()

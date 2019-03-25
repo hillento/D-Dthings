@@ -12,5 +12,4 @@ Half-Orc	Medium	30	Orcish	2	0	1	0	0	0	0	60
 Halfling: Lightfoot Halfling	Small	25	Halfling	0	2	0	0	0	1	0	0
 Halfling: Stout Halfling	Small	25	Halfling	0	2	1	0	0	0	0	0
 Human	Medium	30	+1 Any	1	1	1	1	1	1	0	0
-Human: Variant	Medium	30	+1 Any	0	0	0	0	0	0	1	0
 Tiefling	Medium	30	Infernal	0	0	0	1	0	2	0	60

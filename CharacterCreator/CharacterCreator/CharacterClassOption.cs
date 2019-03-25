@@ -12,7 +12,7 @@ namespace CharacterCreator
     {
       ClassName = ClassInfo[0];
       Description = ClassInfo[1];
-      HitDiceName = ClassInfo[2];
+      HitDice = int.Parse(ClassInfo[2]);
       FavoredStats = ClassInfo[3];
       ClassProficiencies = ClassInfo[4];
       SavingThrows = ClassInfo[5];
@@ -33,7 +33,7 @@ namespace CharacterCreator
         {
           AnimalHandling = true;
         }
-        if (SelectedSkills.Contains("Arcaba"))
+        if (SelectedSkills.Contains("Arcana"))
         {
           Arcana = true;
         }
@@ -130,7 +130,7 @@ namespace CharacterCreator
 
     public string ClassName { get; set; }
     public string Description { get; set; }
-    public string HitDiceName { get; set; }
+    public int HitDice { get; set; }
     public string FavoredStats { get; set; }
     public string ClassProficiencies { get; set; }
     public string SavingThrows { get; set; }

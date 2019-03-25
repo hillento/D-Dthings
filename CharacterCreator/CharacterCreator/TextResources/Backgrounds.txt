@@ -1,14 +1,14 @@
 Name	Source	Skills	Languages	Tools
-Acolyte 	PHB 	Insight (WIS), Religion (INT) 	Any x2 	None
-Charlatan 	PHB 	Deception (CHA), Sleight of hand (DEX) 	None 	Disguise kit, forgery kit
-Criminal 	PHB 	Deception (CHA), Stealth (DEX) 	None 	Gaming set x1, thieves' tools
-Entertainer 	PHB 	Acrobatics (DEX), Performance (CHA) 	None 	Disguise kit, musical instrument x1
-Folk Hero 	PHB 	Animal Handling (WIS), Survival (WIS) 	None 	Artisan's tools x1, vehicles (land)
-Guild Artisan 	PHB 	Insight (WIS), Persuasion (CHA) 	Any x1 	Artisan's tools x1
-Hermit 	PHB 	Medicine (WIS), Religion (INT) 	Any x1 	Herbalism kit
-Noble 	PHB 	History (INT), Persuasion (CHA) 	Any x1 	Gaming set x1
-Outlander 	PHB 	Athletics (STR), Survival (WIS) 	Any x1 	Musical instrument x1
-Sage 	PHB 	Arcana (INT), History (INT) 	Any x2 	None
-Soldier 	PHB 	Athletics (STR), Intimidation (CHA) 	None 	Gaming set x1, vehicles (land)
-Sailor 	PHB 	Athletics (STR), Perception (WIS) 	None 	Navigator's tools, vehicles (water)
-Urchin 	PHB 	Sleight of hand (DEX), Stealth (DEX) 	None 	Disguise kit, thieves' tools 
+Acolyte 	PHB 	Insight, Religion	Any x2 	None
+Charlatan 	PHB 	Deception, Sleight of Hand 	None 	Disguise kit, forgery kit
+Criminal 	PHB 	Deception, Stealth	None 	Gaming set x1, thieves' tools
+Entertainer 	PHB 	Acrobatics, Performance	None 	Disguise kit, musical instrument x1
+Folk Hero 	PHB 	Animal Handling, Survival	None 	Artisan's tools x1, vehicles (land)
+Guild Artisan 	PHB 	Insight, Persuasion	Any x1 	Artisan's tools x1
+Hermit 	PHB 	Medicine, Religion	Any x1 	Herbalism kit
+Noble 	PHB 	History, Persuasion	Any x1 	Gaming set x1
+Outlander 	PHB 	Athletics, Survival	Any x1 	Musical instrument x1
+Sage 	PHB 	Arcana, History	Any x2 	None
+Soldier 	PHB 	Athletics, Intimidation	None 	Gaming set x1, vehicles (land)
+Sailor 	PHB 	Athletics, Perception	None 	Navigator's tools, vehicles (water)
+Urchin 	PHB 	Sleight of Hand, Stealth	None 	Disguise kit, thieves' tools 

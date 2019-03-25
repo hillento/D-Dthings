@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace CharacterCreator
 {
@@ -13,15 +14,30 @@ namespace CharacterCreator
     public Character(Background myBackground, CharacterClassOption myCharacterClass, Race myRace)
     {
 
-      InspirationPoints = 0;
+      
       CharacterLevel = 1;
       SetProficiencyBonusBool();
       SavingThrowBoolArray = SetSavingThrows(myCharacterClass);
       SkillProfsArray = SetSkillProfs(myBackground, myCharacterClass);
+      
+      
 
 
     }
 
+    public void SetPassiveStats(CharacterClassOption myCharacterClass)
+    {
+      HitPoints = myCharacterClass.HitDice + ConBonus;
+      Initiative = DexBonus;
+      if (Perception)
+      {
+        PassivePerception = 10 + WisBonus + ProficiencyBonus;
+      }
+      else
+      {
+        PassivePerception = 10 + WisBonus;
+      }
+    }
 
     private bool[] SetSkillProfs(Background myBackground, CharacterClassOption characterClass
       )
@@ -225,7 +241,7 @@ namespace CharacterCreator
 
     public int CharacterLevel { get; set; }
     public int ProficiencyBonus { get; set; }
-    public int InspirationPoints { get; set; }
+    public int Initiative { get; set; }
     public int PassivePerception { get; set; }
 
     public bool StrSavingThrowBool { get; set; }
@@ -283,9 +299,6 @@ namespace CharacterCreator
     public bool[] SkillProfsArray { get; set; }
 
     public int[] SkillBonuses { get; set; }
-
-
-
-
+    public int HitPoints { get; set; }
   }
 }

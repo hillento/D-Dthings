@@ -31,10 +31,12 @@ namespace CharacterCreator
     bool SuicideRoll = false;
     bool ComputerRoll = false;
     bool SelfRoll = false;
-    int[] uStatBlock= { 0, 0, 0, 0, 0, 0 };
+    int[] uStatBlock = { 0, 0, 0, 0, 0, 0 };
     int[] AssignableStat1 = { 0, 0, 0, 0, 0, 0 };
     int[] AssignableStat2 = { 0, 0, 0, 0, 0, 0 };
     string[] BackgroundProfs = { "", "" };
+    string[] ClassProfs = { "", "", "", "" };
+    bool profs = false;
     string SelectedSkillString;
     public MainWindow()
     {
@@ -142,7 +144,8 @@ namespace CharacterCreator
     {
       if (BackgroundDict.TryGetValue(cbBackgrounds.SelectedItem.ToString(), out Background background))
       {
-        UpdateBackgroundInfo(background); 
+
+        UpdateBackgroundInfo(background);
       }
     }
 
@@ -162,17 +165,18 @@ namespace CharacterCreator
       }
     }
 
-  
+
 
     private void UpdateClassInfo(CharacterClassOption characterClass)
     {
+
       cbSkill1.Items.Clear();
       cbSkill2.Items.Clear();
       cbSkill3.Items.Clear();
       cbSkill4.Items.Clear();
 
       txtblkClassDesc.Text = characterClass.Description;
-      txtblkHitDice.Text = "d" + characterClass.HitDiceName;
+      txtblkHitDice.Text = "d" + characterClass.HitDice;
       txtblkFavoredStats.Text = characterClass.FavoredStats;
       txtblkClassProficiencies.Text = characterClass.ClassProficiencies;
       txtblkClassSavingThrows.Text = characterClass.SavingThrows;
@@ -184,52 +188,81 @@ namespace CharacterCreator
 
       for (int i = 0; i < skillarray.Length; i++)
       {
-        if(skillarray[i].Trim() != "")
+        if (skillarray[i].Trim() != "")
         {
           cbSkill1.Items.Add(skillarray[i].Trim());
           cbSkill2.Items.Add(skillarray[i].Trim());
           cbSkill3.Items.Add(skillarray[i].Trim());
           cbSkill4.Items.Add(skillarray[i].Trim());
         }
-        if (skillarray[i].Contains(BackgroundProfs[1]) || skillarray[i].Contains(BackgroundProfs[0]))
+
+
+        if (characterClass.NumberOfSkills == 2)
         {
-          cbSkill1.Items.Remove(skillarray[i].Trim());
-          cbSkill2.Items.Remove(skillarray[i].Trim());
-          cbSkill3.Items.Remove(skillarray[i].Trim());
-          cbSkill4.Items.Remove(skillarray[i].Trim());
+          cbSkill1.Visibility = Visibility.Visible;
+          cbSkill2.Visibility = Visibility.Visible;
+          cbSkill3.Visibility = Visibility.Hidden;
+          cbSkill4.Visibility = Visibility.Hidden;
         }
-        
-      }
+        if (characterClass.NumberOfSkills == 3)
+        {
+          cbSkill1.Visibility = Visibility.Visible;
+          cbSkill2.Visibility = Visibility.Visible;
+          cbSkill3.Visibility = Visibility.Visible;
+          cbSkill4.Visibility = Visibility.Hidden;
+        }
+        if (characterClass.NumberOfSkills == 4)
+        {
+          cbSkill1.Visibility = Visibility.Visible;
+          cbSkill2.Visibility = Visibility.Visible;
+          cbSkill3.Visibility = Visibility.Visible;
+          cbSkill4.Visibility = Visibility.Visible;
+        }
 
-      if (characterClass.NumberOfSkills == 2)
-      {
-        cbSkill1.Visibility = Visibility.Visible;
-        cbSkill2.Visibility = Visibility.Visible;
-        cbSkill3.Visibility = Visibility.Hidden;
-        cbSkill4.Visibility = Visibility.Hidden;
       }
-      if (characterClass.NumberOfSkills == 3)
-      {
-        cbSkill1.Visibility = Visibility.Visible;
-        cbSkill2.Visibility = Visibility.Visible;
-        cbSkill3.Visibility = Visibility.Visible;
-        cbSkill4.Visibility = Visibility.Hidden;
-      }
-      if (characterClass.NumberOfSkills == 4)
-      {
-        cbSkill1.Visibility = Visibility.Visible;
-        cbSkill2.Visibility = Visibility.Visible;
-        cbSkill3.Visibility = Visibility.Visible;
-        cbSkill4.Visibility = Visibility.Visible;
-      }
+    }
 
+    private void CbSkill1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      if ((cbSkill2.SelectedIndex != -1 && cbSkill1.SelectedIndex == cbSkill2.SelectedIndex) || (cbSkill3.SelectedIndex != -1 && cbSkill1.SelectedIndex == cbSkill3.SelectedIndex) || (cbSkill4.SelectedIndex != -1 && cbSkill1.SelectedIndex == cbSkill4.SelectedIndex))
+      {
+        MessageBox.Show("Please select a skill that hasn't already been selected");
+        cbSkill1.SelectedIndex = -1;
+      }
+    }
+
+    private void CbSkill2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      if ((cbSkill1.SelectedIndex != -1 && cbSkill2.SelectedIndex == cbSkill1.SelectedIndex) || (cbSkill3.SelectedIndex != -1 && cbSkill2.SelectedIndex == cbSkill3.SelectedIndex) || (cbSkill4.SelectedIndex != -1 && cbSkill2.SelectedIndex == cbSkill4.SelectedIndex))
+      {
+        MessageBox.Show("Please select a skill that hasn't already been selected");
+        cbSkill2.SelectedIndex = -1;
+      }
+    }
+
+    private void CbSkill3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      if ((cbSkill2.SelectedIndex != -1 && cbSkill3.SelectedIndex == cbSkill2.SelectedIndex) || (cbSkill1.SelectedIndex != -1 && cbSkill3.SelectedIndex == cbSkill1.SelectedIndex) || (cbSkill4.SelectedIndex != -1 && cbSkill3.SelectedIndex == cbSkill4.SelectedIndex))
+      {
+        MessageBox.Show("Please select a skill that hasn't already been selected");
+        cbSkill3.SelectedIndex = -1;
+      }
+    }
+
+    private void CbSkill4_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      if ((cbSkill2.SelectedIndex != -1 && cbSkill4.SelectedIndex == cbSkill2.SelectedIndex) || (cbSkill3.SelectedIndex != -1 && cbSkill4.SelectedIndex == cbSkill3.SelectedIndex) || (cbSkill1.SelectedIndex != -1 && cbSkill4.SelectedIndex == cbSkill1.SelectedIndex))
+      {
+        MessageBox.Show("Please select a skill that hasn't already been selected");
+        cbSkill4.SelectedIndex = -1;
+      }
     }
 
     private void CbRaces_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
       if (RaceDict.TryGetValue(cbRaces.SelectedItem.ToString(), out Race race))
       {
-        
+
         UpdateRaceInfo(race);
       }
 
@@ -245,7 +278,7 @@ namespace CharacterCreator
       AssignableStat1[5] = 0;
 
       AssignableStat1[cbAssignableStat1.SelectedIndex] = 1;
-      
+
     }
 
     private void CbAssignableStat2_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -259,7 +292,7 @@ namespace CharacterCreator
 
       AssignableStat2[cbAssignableStat1.SelectedIndex] = 1;
 
-      
+
     }
 
     private void UpdateRaceInfo(Race race)
@@ -267,7 +300,7 @@ namespace CharacterCreator
 
       cbAssignableStat1.Items.Clear();
       cbAssignableStat2.Items.Clear();
-      
+
 
       string[] statnames = { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" };
 
@@ -278,7 +311,7 @@ namespace CharacterCreator
         cbAssignableStat2.Items.Add(statnames[i]);
       }
 
-      
+
 
       txtblkSize.Text = race.Size;
       txtblkSpeed.Text = race.Speed.ToString() + "ft";
@@ -306,7 +339,7 @@ namespace CharacterCreator
 
     }
 
-    
+
 
     private void BtnSuicideRoll_Click(object sender, RoutedEventArgs e)
     {
@@ -314,7 +347,7 @@ namespace CharacterCreator
       ComputerRoll = false;
       SelfRoll = false;
 
-      
+
 
       uStatBlock = uRollType.SuicideRoller();
       lblStat1.Content = uStatBlock[0];
@@ -453,6 +486,19 @@ namespace CharacterCreator
 
     private void BtnGenerateCharacter_Click(object sender, RoutedEventArgs e)
     {
+      profs = true;
+      ClassProfs[0] = cbSkill1.SelectedItem.ToString();
+      ClassProfs[1] = cbSkill2.SelectedItem.ToString();
+      if (cbSkill3.Visibility == Visibility.Visible)
+      {
+        ClassProfs[2] = cbSkill3.SelectedItem.ToString();
+      }
+      if (cbSkill4.Visibility == Visibility.Visible)
+      {
+        ClassProfs[3] = cbSkill4.SelectedItem.ToString();
+      }
+      
+
       if (cbBackgrounds.SelectedIndex != -1)
       {
         if (cbCharacterClasses.SelectedIndex != -1)
@@ -461,13 +507,24 @@ namespace CharacterCreator
           {
             if (cbStat1.SelectedIndex != 6 && cbStat2.SelectedIndex != 6 && cbStat3.SelectedIndex != 6 && cbStat4.SelectedIndex != 6 && cbStat5.SelectedIndex != 6 && cbStat6.SelectedIndex != 6)
             {
-              
-               
+              for (int i = 0; i < ClassProfs.Length; i++)
+              {
+                if(ClassProfs[i] == BackgroundProfs[0] || ClassProfs[i] == BackgroundProfs[1])
+                {                  
+                  profs = false;
+                }                
+              }
+              if (profs)
+              {
                 CreateMyCharacter();
-
-              
-
+              }
+              else
+              {
+                MessageBox.Show("Please select class proficiencies that are not the same as the background proficiencies");
+              }
             }
+
+
             else
             {
               MessageBox.Show("Please assign stats");
@@ -517,7 +574,7 @@ namespace CharacterCreator
           uStatBlock[cbStat5.SelectedIndex] = (int)lblStat5.Content;
           uStatBlock[cbStat6.SelectedIndex] = (int)lblStat6.Content;
 
-          
+
 
           myCharacter.Strength = uStatBlock[0] + race.StrengthBonus + AssignableStat1[0] + AssignableStat2[0];
           myCharacter.Dexterity = uStatBlock[1] + race.DexterityBonus + AssignableStat1[1] + AssignableStat2[1];
@@ -526,6 +583,7 @@ namespace CharacterCreator
           myCharacter.Wisdom = uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4];
           myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
           myCharacter.StatBonusArray = myCharacter.SetStatMods();
+          myCharacter.SetPassiveStats(characterClass);
 
           sheetform = new CharacterSheet(myCharacter);
           sheetform.Show();
@@ -547,6 +605,7 @@ namespace CharacterCreator
         myCharacter.Wisdom = uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4];
         myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
         myCharacter.StatBonusArray = myCharacter.SetStatMods();
+        myCharacter.SetPassiveStats(characterClass);
 
         sheetform = new CharacterSheet(myCharacter);
         sheetform.Show();
@@ -582,6 +641,8 @@ namespace CharacterCreator
             myCharacter.Wisdom = uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4];
             myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
             myCharacter.StatBonusArray = myCharacter.SetStatMods();
+            myCharacter.SetPassiveStats(characterClass);
+
 
             sheetform = new CharacterSheet(myCharacter);
             sheetform.Show();
@@ -598,7 +659,5 @@ namespace CharacterCreator
         }
       }
     }
-
-    
   }
 }

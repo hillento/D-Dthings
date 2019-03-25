@@ -679,6 +679,7 @@
         <RowDefinition Height="*"/>
         <RowDefinition Height="*"/>
         <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"/>
@@ -693,21 +694,28 @@
                 IsHitTestVisible="False"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                 FontSize="10"/>
-      <Label x:Name="lblInspiration"
+                FontSize="10"/>
+      <Label x:Name="lblInitiative"
                 Grid.Column="0"
                 Grid.Row="1"
                 IsHitTestVisible="False"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                 FontSize="10"/>
+                FontSize="10"/>
       <Label x:Name="lblProficiencyBonus"
                 Grid.Column="0"
                 Grid.Row="2"
                 IsHitTestVisible="False"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                 FontSize="10"/>
+                FontSize="10"/>
+      <Label x:Name="lblHitPoints"
+                Grid.Column="0"
+                Grid.Row="3"
+                IsHitTestVisible="False"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="10"/>
 
       <TextBlock Text="Passive Wisdom"
                 Grid.Column="1"
@@ -717,7 +725,7 @@
                 VerticalAlignment="Center"
                  TextWrapping="Wrap"
                  FontSize="10"/>
-      <TextBlock Text="Inspiration"
+      <TextBlock Text="Initiative"
                 Grid.Column="1"
                 Grid.Row="1"
                 IsHitTestVisible="False"
@@ -728,6 +736,14 @@
       <TextBlock Text="Proficiency Bonus"
                 Grid.Column="1"
                 Grid.Row="2"
+                IsHitTestVisible="False"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                 TextWrapping="Wrap"
+                 FontSize="10"/>
+      <TextBlock Text="Hit Points"
+                Grid.Column="1"
+                Grid.Row="3"
                 IsHitTestVisible="False"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
