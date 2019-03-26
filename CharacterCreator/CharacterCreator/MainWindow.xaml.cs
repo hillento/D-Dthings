@@ -627,10 +627,10 @@ namespace CharacterCreator
           {
             uStatBlock[0] = int.Parse(txtbxSelfRolledStr.Text);
             uStatBlock[1] = int.Parse(txtbxSelfRolledDex.Text);
-            uStatBlock[2] = int.Parse(txtbxSelfRolledStr.Text);
-            uStatBlock[3] = int.Parse(txtbxSelfRolledStr.Text);
-            uStatBlock[4] = int.Parse(txtbxSelfRolledStr.Text);
-            uStatBlock[5] = int.Parse(txtbxSelfRolledStr.Text);
+            uStatBlock[2] = int.Parse(txtbxSelfRolledCon.Text);
+            uStatBlock[3] = int.Parse(txtbxSelfRolledInt.Text);
+            uStatBlock[4] = int.Parse(txtbxSelfRolledWis.Text);
+            uStatBlock[5] = int.Parse(txtbxSelfRolledCha.Text);
 
 
 
