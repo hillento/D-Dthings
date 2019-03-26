@@ -485,20 +485,7 @@ namespace CharacterCreator
     }
 
     private void BtnGenerateCharacter_Click(object sender, RoutedEventArgs e)
-    {
-      profs = true;
-      ClassProfs[0] = cbSkill1.SelectedItem.ToString();
-      ClassProfs[1] = cbSkill2.SelectedItem.ToString();
-      if (cbSkill3.Visibility == Visibility.Visible)
-      {
-        ClassProfs[2] = cbSkill3.SelectedItem.ToString();
-      }
-      if (cbSkill4.Visibility == Visibility.Visible)
-      {
-        ClassProfs[3] = cbSkill4.SelectedItem.ToString();
-      }
-      
-
+    {        
       if (cbBackgrounds.SelectedIndex != -1)
       {
         if (cbCharacterClasses.SelectedIndex != -1)
@@ -507,21 +494,42 @@ namespace CharacterCreator
           {
             if (cbStat1.SelectedIndex != 6 && cbStat2.SelectedIndex != 6 && cbStat3.SelectedIndex != 6 && cbStat4.SelectedIndex != 6 && cbStat5.SelectedIndex != 6 && cbStat6.SelectedIndex != 6)
             {
-              for (int i = 0; i < ClassProfs.Length; i++)
+              if(cbSkill1.SelectedIndex != -1 && cbSkill2.SelectedIndex !=-1 && (cbSkill3.Visibility == Visibility.Hidden || cbSkill3.SelectedIndex != -1) && 
+                (cbSkill4.Visibility == Visibility.Hidden || cbSkill4.SelectedIndex != -1))
               {
-                if(ClassProfs[i] == BackgroundProfs[0] || ClassProfs[i] == BackgroundProfs[1])
-                {                  
-                  profs = false;
-                }                
-              }
-              if (profs)
-              {
-                CreateMyCharacter();
+                profs = true;
+                ClassProfs[0] = cbSkill1.SelectedItem.ToString();
+                ClassProfs[1] = cbSkill2.SelectedItem.ToString();
+                if (cbSkill3.Visibility == Visibility.Visible)
+                {
+                  ClassProfs[2] = cbSkill3.SelectedItem.ToString();
+                }
+                if (cbSkill4.Visibility == Visibility.Visible)
+                {
+                  ClassProfs[3] = cbSkill4.SelectedItem.ToString();
+                }
+
+                for (int i = 0; i < ClassProfs.Length; i++)
+                {
+                  if (ClassProfs[i] == BackgroundProfs[0] || ClassProfs[i] == BackgroundProfs[1])
+                  {
+                    profs = false;
+                  }
+                }
+                if (profs)
+                {
+                  CreateMyCharacter();
+                }
+                else
+                {
+                  MessageBox.Show("Please select class proficiencies that are not the same as the background proficiencies");
+                }
               }
               else
               {
-                MessageBox.Show("Please select class proficiencies that are not the same as the background proficiencies");
+                MessageBox.Show("Please Select proficiencies for your class");
               }
+              
             }
 
 
