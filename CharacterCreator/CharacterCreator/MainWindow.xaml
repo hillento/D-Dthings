@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterCreator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200">
+        Title="MainWindow" Height="800" Width="1200"
+        WindowState="Maximized"
+        WindowStyle="None">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="5*"/>
@@ -602,6 +604,13 @@
             Margin="10"
             FontSize="25"
             Click="BtnGenerateCharacter_Click"/>
+    <Button Content="Close"
+            x:Name="btnClose"
+            Grid.Column="6"
+            Margin="25"
+            Grid.Row="4"
+            FontSize="20"
+            Click="BtnClose_Click"/>
 
   </Grid>
 </Window>
