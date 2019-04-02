@@ -800,7 +800,8 @@
 
     </GroupBox>
 
-    <GroupBox Grid.Column="4"
+    <GroupBox Header="Features and Traits"
+              Grid.Column="4"
               Grid.Row="5"
               Grid.RowSpan="6"
               Grid.ColumnSpan="2"
