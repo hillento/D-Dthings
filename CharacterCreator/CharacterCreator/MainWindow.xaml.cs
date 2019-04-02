@@ -606,12 +606,59 @@ namespace CharacterCreator
       if (SuicideRoll)
       {
 
-        myCharacter.Strength = uStatBlock[0] + race.StrengthBonus + AssignableStat1[0] + AssignableStat2[0];
-        myCharacter.Dexterity = uStatBlock[1] + race.DexterityBonus + AssignableStat1[1] + AssignableStat2[1];
-        myCharacter.Constitution = uStatBlock[2] + race.ConstitutionBonus + AssignableStat1[2] + AssignableStat2[2];
-        myCharacter.Intelligence = uStatBlock[3] + race.InteligenceBonus + AssignableStat1[3] + AssignableStat2[3];
-        myCharacter.Wisdom = uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4];
-        myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
+        if (uStatBlock[0] + race.StrengthBonus + AssignableStat1[0] + AssignableStat2[0] <= 20)
+        {
+          myCharacter.Strength = uStatBlock[0] + race.StrengthBonus + AssignableStat1[0] + AssignableStat2[0];
+        }
+        else
+        {
+          myCharacter.Strength = 20;
+        }
+
+        if (uStatBlock[1] + race.DexterityBonus + AssignableStat1[1] + AssignableStat2[1] <= 20)
+        {
+          myCharacter.Dexterity = uStatBlock[1] + race.DexterityBonus + AssignableStat1[1] + AssignableStat2[1];
+        }
+        else
+        {
+          myCharacter.Dexterity = 20;
+        }
+
+        if (uStatBlock[2] + race.ConstitutionBonus + AssignableStat1[2] + AssignableStat2[2] <= 20)
+        {
+          myCharacter.Constitution = uStatBlock[2] + race.ConstitutionBonus + AssignableStat1[2] + AssignableStat2[2];
+        }
+        else
+        {
+          myCharacter.Constitution = 20;
+        }
+
+        if (uStatBlock[3] + race.InteligenceBonus + AssignableStat1[3] + AssignableStat2[3] <= 20)
+        {
+          myCharacter.Intelligence = uStatBlock[3] + race.InteligenceBonus + AssignableStat1[3] + AssignableStat2[3];
+        }
+        else
+        {
+          myCharacter.Intelligence = 20;
+        }
+
+        if (uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4] <= 20)
+        {
+          myCharacter.Wisdom = uStatBlock[4] + race.WisdomBonus + AssignableStat1[4] + AssignableStat2[4];
+        }
+        else
+        {
+          myCharacter.Wisdom = 20;
+        }
+
+        if (uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5] <= 20)
+        {
+          myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
+        }
+        else
+        {
+          myCharacter.Charisma = 20;
+        }
         myCharacter.StatBonusArray = myCharacter.SetStatMods();
         myCharacter.SetPassiveStats(characterClass);
 
@@ -641,7 +688,7 @@ namespace CharacterCreator
             uStatBlock[5] = int.Parse(txtbxSelfRolledCha.Text);
 
 
-
+            
             myCharacter.Strength = uStatBlock[0] + race.StrengthBonus + AssignableStat1[0] + AssignableStat2[0];
             myCharacter.Dexterity = uStatBlock[1] + race.DexterityBonus + AssignableStat1[1] + AssignableStat2[1];
             myCharacter.Constitution = uStatBlock[2] + race.ConstitutionBonus + AssignableStat1[2] + AssignableStat2[2];

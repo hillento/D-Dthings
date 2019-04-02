@@ -20,6 +20,7 @@ namespace CharacterCreator
   public partial class CharacterSheet : Window
   {
     Character myCharacter;
+    
     public CharacterSheet(Character character)
     {
 
@@ -92,6 +93,7 @@ namespace CharacterCreator
 
     private void SetStats()
     {
+      
       lblStr.Content = myCharacter.Strength;
       lblDex.Content = myCharacter.Dexterity;
       lblCon.Content = myCharacter.Constitution;

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterCreator"
         mc:Ignorable="d"
-        Title="CharacterSheet" Height="1000" Width="21cm">
+        Title="CharacterSheet" Height="27.94cm " Width="21.59cm">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="*"/>
@@ -17,8 +17,11 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="*"/>
@@ -110,7 +113,7 @@
                Grid.Row="0"
                VerticalAlignment="Center"
                  FontSize="10"/>
-        <Label Content="Dexerity"
+        <Label Content="Dexterity"
                Grid.Column="2"
                Grid.Row="1"
                VerticalAlignment="Center"
@@ -547,126 +550,126 @@
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Animal Handling"
                   Grid.Column="2"
                   Grid.Row="1"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Arcana"
                   Grid.Column="2"
                   Grid.Row="2"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Athletics"
                   Grid.Column="2"
                   Grid.Row="3"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Deception"
                   Grid.Column="2"
                   Grid.Row="4"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="History"
                   Grid.Column="2"
                   Grid.Row="5"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Insight"
                   Grid.Column="2"
                   Grid.Row="6"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Intimidation"
                   Grid.Column="2"
                   Grid.Row="7"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Investigation"
                   Grid.Column="2"
                   Grid.Row="8"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Medicine"
                   Grid.Column="2"
                   Grid.Row="9"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Nature"
                   Grid.Column="2"
                   Grid.Row="10"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Perception"
                   Grid.Column="2"
                   Grid.Row="11"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Performance"
                   Grid.Column="2"
                   Grid.Row="12"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Persuasion"
                   Grid.Column="2"
                   Grid.Row="13"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Religion"
                   Grid.Column="2"
                   Grid.Row="14"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Sleight Of Hand"
                   Grid.Column="2"
                   Grid.Row="15"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Left"
                   IsHitTestVisible="False"
-                 FontSize="10" Margin="2,0,0,0"/>
+                 FontSize="9"/>
         <Label Content="Stealth"
                   Grid.Column="2"
                   Grid.Row="16"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
         <Label Content="Survival"
                   Grid.Column="2"
                   Grid.Row="17"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   IsHitTestVisible="False"
-                 FontSize="10"/>
+                 FontSize="9"/>
 
       </Grid>
 
@@ -674,7 +677,7 @@
     <Grid
       Grid.Column="1"
       Grid.Row = "1"
-      Margin="5">
+      Margin= "10">
       <Grid.RowDefinitions>
         <RowDefinition Height="*"/>
         <RowDefinition Height="*"/>
@@ -724,7 +727,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                  TextWrapping="Wrap"
-                 FontSize="10"/>
+                 FontSize="9"/>
       <TextBlock Text="Initiative"
                 Grid.Column="1"
                 Grid.Row="1"
@@ -732,7 +735,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                  TextWrapping="Wrap"
-                 FontSize="10"/>
+                 FontSize="9"/>
       <TextBlock Text="Proficiency Bonus"
                 Grid.Column="1"
                 Grid.Row="2"
@@ -740,7 +743,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                  TextWrapping="Wrap"
-                 FontSize="10"/>
+                 FontSize="9"/>
       <TextBlock Text="Hit Points"
                 Grid.Column="1"
                 Grid.Row="3"
@@ -748,8 +751,62 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                  TextWrapping="Wrap"
-                 FontSize="10"/>
+                 FontSize="9"/>
 
     </Grid>
+    <GroupBox Header="CharacterName"
+              Grid.ColumnSpan="2"
+              Margin="10">
+      <Label x:Name="lblCharacterName"/>
+    </GroupBox>
+    <GroupBox Header="Other Proficiencies and Languages"
+              Grid.Row="9"
+              Grid.Column="0"
+              Grid.ColumnSpan="2"
+              Grid.RowSpan="2">
+      <ListView x:Name="lstProfsLang"/>
+    </GroupBox>
+
+    <GroupBox Grid.Column="2"
+              Grid.Row="1"
+              Grid.RowSpan="4"
+              Grid.ColumnSpan="2"
+              Margin="10">
+
+    </GroupBox>
+
+    <GroupBox Header="Attacks and Spellcasting"
+              Grid.Column="2"
+              Grid.Row="5"
+              Grid.RowSpan="3"
+              Grid.ColumnSpan="2"
+              Margin="10">
+    </GroupBox>
+
+    <GroupBox Header="Equipment"
+              Grid.Column="2"
+              Grid.Row="8"
+              Grid.RowSpan="3"
+              Grid.ColumnSpan="2"
+              Margin="10">
+
+    </GroupBox>
+
+    <GroupBox Grid.Column="4"
+              Grid.Row="1"
+              Grid.RowSpan="4"
+              Grid.ColumnSpan="2"
+              Margin="10">
+
+    </GroupBox>
+
+    <GroupBox Grid.Column="4"
+              Grid.Row="5"
+              Grid.RowSpan="6"
+              Grid.ColumnSpan="2"
+              Margin="10">
+
+    </GroupBox>
+
   </Grid>
 </Window>
