@@ -682,7 +682,6 @@
         <RowDefinition Height="*"/>
         <RowDefinition Height="*"/>
         <RowDefinition Height="*"/>
-        <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"/>
@@ -698,23 +697,17 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="10"/>
-      <Label x:Name="lblInitiative"
+      
+      <Label x:Name="lblProficiencyBonus"
                 Grid.Column="0"
                 Grid.Row="1"
                 IsHitTestVisible="False"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontSize="10"/>
-      <Label x:Name="lblProficiencyBonus"
-                Grid.Column="0"
-                Grid.Row="2"
-                IsHitTestVisible="False"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="10"/>
       <Label x:Name="lblHitPoints"
                 Grid.Column="0"
-                Grid.Row="3"
+                Grid.Row="2"
                 IsHitTestVisible="False"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -728,7 +721,8 @@
                 VerticalAlignment="Center"
                  TextWrapping="Wrap"
                  FontSize="9"/>
-      <TextBlock Text="Initiative"
+      
+      <TextBlock Text="Proficiency Bonus"
                 Grid.Column="1"
                 Grid.Row="1"
                 IsHitTestVisible="False"
@@ -736,17 +730,9 @@
                 VerticalAlignment="Center"
                  TextWrapping="Wrap"
                  FontSize="9"/>
-      <TextBlock Text="Proficiency Bonus"
-                Grid.Column="1"
-                Grid.Row="2"
-                IsHitTestVisible="False"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                 TextWrapping="Wrap"
-                 FontSize="9"/>
       <TextBlock Text="Hit Points"
                 Grid.Column="1"
-                Grid.Row="3"
+                Grid.Row="2"
                 IsHitTestVisible="False"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
@@ -759,7 +745,7 @@
               Margin="10">
       <Label x:Name="lblCharacterName"/>
     </GroupBox>
-    <GroupBox Header="Other Proficiencies and Languages"
+    <GroupBox Header="Other Proficiencies &amp; Languages"
               Grid.Row="9"
               Grid.Column="0"
               Grid.ColumnSpan="2"
@@ -772,10 +758,56 @@
               Grid.RowSpan="4"
               Grid.ColumnSpan="2"
               Margin="10">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Armor&#x0a;Class"
+                  Grid.ColumnSpan="2"
+                  Grid.Column="0"
+                  Grid.Row="0"
+                  Margin="5"
+                  FontSize="9">
+          <Label x:Name="lblAC"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"/>
+        </GroupBox>
+        <GroupBox Header="Initiative"
+                  Grid.ColumnSpan="2"
+                  Grid.Column="2"
+                  Grid.Row="0"
+                  Margin="5"
+                  FontSize="10">
+          <Label x:Name="lblInitiative"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"/>
+        </GroupBox>
+        <GroupBox Header="Speed"
+                  Grid.ColumnSpan="2"
+                  Grid.Column="4"
+                  Grid.Row="0"
+                  Margin="5"
+                  FontSize="10">
+          <Label x:Name="lblSpeed"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"/>
+        </GroupBox>
+      </Grid>
 
     </GroupBox>
 
-    <GroupBox Header="Attacks and Spellcasting"
+    <GroupBox Header="Attacks &amp; Spellcasting"
               Grid.Column="2"
               Grid.Row="5"
               Grid.RowSpan="3"
@@ -800,14 +832,14 @@
 
     </GroupBox>
 
-    <GroupBox Header="Features and Traits"
+    <GroupBox Header="Features &amp; Traits"
               Grid.Column="4"
               Grid.Row="5"
               Grid.RowSpan="6"
               Grid.ColumnSpan="2"
               Margin="10">
-
     </GroupBox>
+    
 
   </Grid>
 </Window>
