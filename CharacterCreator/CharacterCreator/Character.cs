@@ -14,7 +14,7 @@ namespace CharacterCreator
     public Character(Background myBackground, CharacterClassOption myCharacterClass, Race myRace)
     {
 
-      
+      Speed = myRace.Speed;
       CharacterLevel = 1;
       SetProficiencyBonusBool();
       SavingThrowBoolArray = SetSavingThrows(myCharacterClass);
@@ -300,5 +300,6 @@ namespace CharacterCreator
 
     public int[] SkillBonuses { get; set; }
     public int HitPoints { get; set; }
+    public object Speed { get; internal set; }
   }
 }

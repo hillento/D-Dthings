@@ -89,6 +89,7 @@ namespace CharacterCreator
       lblInitiative.Content = myCharacter.DexBonus;
       lblPassivePerception.Content = myCharacter.PassivePerception;
       lblHitPoints.Content = myCharacter.HitPoints;
+      lblSpeed.Content = myCharacter.Speed;
     }
 
     private void SetStats()

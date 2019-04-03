@@ -74,6 +74,7 @@ namespace CharacterCreator
 
     private void LoadBackground()
     {
+      
       StreamReader backgroundsfile;
       string[] tempBackground;
       try

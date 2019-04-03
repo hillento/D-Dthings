@@ -803,6 +803,69 @@
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"/>
         </GroupBox>
+        <GroupBox Header="Current Hit Points"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="6"/>
+        <GroupBox Header="Temporary Hit Points"
+                  Grid.Row="2"
+                  Grid.ColumnSpan="6"/>
+        <GroupBox Header="Hit Dice"
+                  Grid.Row="3"
+                  Grid.ColumnSpan="3"/>
+        <GroupBox Header="Death Saves"
+                  Grid.Row="3"
+                  Grid.Column="3"
+                  Grid.ColumnSpan="3">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="3*"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Success"
+                   Grid.Column="0"
+                   Grid.Row="0"/>
+            <Label Content="Fail"
+                   Grid.Column="0"
+                   Grid.Row="1"/>
+            <CheckBox x:Name="cbSuccess1"
+                      Grid.Column="1"
+                      Grid.Row="0"
+                      IsHitTestVisible="False"
+                      VerticalAlignment="Center"/>
+            <CheckBox x:Name="cbSuccess2"
+                      Grid.Column="2"
+                      Grid.Row="0"
+                      IsHitTestVisible="False"
+                      VerticalAlignment="Center"/>
+            <CheckBox x:Name="cbSuccess3"
+                      Grid.Column="3"
+                      Grid.Row="0"
+                      IsHitTestVisible="False"
+                      VerticalAlignment="Center"/> 
+            <CheckBox x:Name="cbFail1"
+                      Grid.Column="1"
+                      Grid.Row="1"
+                      IsHitTestVisible="False"
+                      VerticalAlignment="Center"/>
+            <CheckBox x:Name="cbFail2"
+                      Grid.Column="2"
+                      Grid.Row="1"
+                      IsHitTestVisible="False"
+                      VerticalAlignment="Center"/>
+            <CheckBox x:Name="cbFail3"
+                      Grid.Column="3"
+                      Grid.Row="1"
+                      IsHitTestVisible="False"
+                      VerticalAlignment="Center"/>
+          </Grid>
+        </GroupBox>
+
       </Grid>
 
     </GroupBox>
