@@ -884,6 +884,52 @@
               Grid.RowSpan="3"
               Grid.ColumnSpan="2"
               Margin="10">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="GP"
+                  Grid.Row="3"
+                  Grid.Column="0">
+          <Label x:Name="lblGoldPieces"
+                 Content="0"/>
+        </GroupBox>
+        <GroupBox Header="SP"
+                  Grid.Row="1"
+                  Grid.Column="0">
+          <Label x:Name="lblSilverPieces"
+                 Content="0"/>
+        </GroupBox>
+        <GroupBox Header="CP"
+                  Grid.Row="0"
+                  Grid.Column="0">
+          <Label x:Name="lblCopperPieces"
+                 Content="0"/>
+        </GroupBox>
+        <GroupBox Header="EP"
+                  Grid.Row="2"
+                  Grid.Column="0">
+          <Label x:Name="lblElectrumPieces"
+                 Content="0"/>
+        </GroupBox>
+        <GroupBox Header="PP"
+                  Grid.Row="4"
+                  Grid.Column="0">
+          <Label x:Name="lblPlatinumPieces"
+                 Content="0"/>
+        </GroupBox>
+        <ListView x:Name="lstbxEquipment"
+                  Grid.Column="1"
+                  Grid.RowSpan="5"/>
+      </Grid>
 
     </GroupBox>
 

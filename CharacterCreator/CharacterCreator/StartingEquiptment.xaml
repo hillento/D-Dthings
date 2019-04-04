@@ -1,0 +1,31 @@
+﻿<Window x:Class="CharacterCreator.StartingEquiptment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CharacterCreator"
+        mc:Ignorable="d"
+        Title="StartingEquiptment" Height="150" Width="400">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="2*"/>
+    </Grid.RowDefinitions>
+    <Button x:Name="btnMoneyStart"
+            Content="Start with Money"
+            Grid.ColumnSpan="2"
+            Margin="10"
+            Click="BtnMoneyStart_Click"/>
+    <Button x:Name="btnEquipmentStart"
+            Content="Start with Equpment"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Margin="10"
+            Click="BtnEquipmentStart_Click"/>
+  </Grid>
+</Window>

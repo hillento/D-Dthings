@@ -25,10 +25,10 @@ namespace CharacterCreator
 
     }
 
-    public String RaceName { get; set; }
-    public String Size { get; set; }
+    public string RaceName { get; set; }
+    public string Size { get; set; }
     public int Speed { get; set; }
-    public String Language { get; set; }
+    public string Language { get; set; }
     public int StrengthBonus { get; set; }
     public int DexterityBonus { get; set; }
     public int ConstitutionBonus { get; set; }

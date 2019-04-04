@@ -28,6 +28,7 @@ namespace CharacterCreator
     Rollers uRollType = new Rollers();
     Character myCharacter;
     CharacterSheet sheetform;
+    StartingEquiptment equiptmentForm;
     bool SuicideRoll = false;
     bool ComputerRoll = false;
     bool SelfRoll = false;
@@ -38,6 +39,7 @@ namespace CharacterCreator
     string[] ClassProfs = { "", "", "", "" };
     bool profs = false;
     string SelectedSkillString;
+    Random rnd = new Random();
     public MainWindow()
     {
       InitializeComponent();
@@ -74,7 +76,6 @@ namespace CharacterCreator
 
     private void LoadBackground()
     {
-      
       StreamReader backgroundsfile;
       string[] tempBackground;
       try
@@ -98,16 +99,16 @@ namespace CharacterCreator
     private void LoadClasses()
     {
       StreamReader CharacterClassFile;
-      string[] tempClasse;
+      string[] tempClasses;
       try
       {
         CharacterClassFile = File.OpenText("CharacterClasses.txt");
         CharacterClassFile.ReadLine();
         while (!CharacterClassFile.EndOfStream)
         {
-          tempClasse = CharacterClassFile.ReadLine().Split('\t');
-          cbCharacterClasses.Items.Add(tempClasse[0]);
-          CharacterClassDict.Add(tempClasse[0], new CharacterClassOption(tempClasse));
+          tempClasses = CharacterClassFile.ReadLine().Split('\t');
+          cbCharacterClasses.Items.Add(tempClasses[0]);
+          CharacterClassDict.Add(tempClasses[0], new CharacterClassOption(tempClasses));
         }
       }
       catch (Exception)
@@ -142,10 +143,10 @@ namespace CharacterCreator
 
 
     private void CbBackgrounds_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
+    {      
       if (BackgroundDict.TryGetValue(cbBackgrounds.SelectedItem.ToString(), out Background background))
       {
-
+        MyBackground = background;
         UpdateBackgroundInfo(background);
       }
     }
@@ -162,6 +163,7 @@ namespace CharacterCreator
     {
       if (CharacterClassDict.TryGetValue(cbCharacterClasses.SelectedItem.ToString(), out CharacterClassOption characterClass))
       {
+        MyClass = characterClass;
         UpdateClassInfo(characterClass);
       }
     }
@@ -263,7 +265,7 @@ namespace CharacterCreator
     {
       if (RaceDict.TryGetValue(cbRaces.SelectedItem.ToString(), out Race race))
       {
-
+        MyRace = race;
         UpdateRaceInfo(race);
       }
 
@@ -594,8 +596,8 @@ namespace CharacterCreator
           myCharacter.StatBonusArray = myCharacter.SetStatMods();
           myCharacter.SetPassiveStats(characterClass);
 
-          sheetform = new CharacterSheet(myCharacter);
-          sheetform.Show();
+
+          OpenGenerationForms();          
         }
         else
         {
@@ -663,8 +665,7 @@ namespace CharacterCreator
         myCharacter.StatBonusArray = myCharacter.SetStatMods();
         myCharacter.SetPassiveStats(characterClass);
 
-        sheetform = new CharacterSheet(myCharacter);
-        sheetform.Show();
+        OpenGenerationForms();
       }
 
       if (SelfRoll)
@@ -698,10 +699,6 @@ namespace CharacterCreator
             myCharacter.Charisma = uStatBlock[5] + race.CharismaBonus + AssignableStat1[5] + AssignableStat2[5];
             myCharacter.StatBonusArray = myCharacter.SetStatMods();
             myCharacter.SetPassiveStats(characterClass);
-
-
-            sheetform = new CharacterSheet(myCharacter);
-            sheetform.Show();
           }
 
           else
@@ -713,12 +710,102 @@ namespace CharacterCreator
         {
           MessageBox.Show("Please enter a number between 3 and 18 for all stats");
         }
+
+        OpenGenerationForms();
+
       }
     }
+
+    private void OpenGenerationForms()
+    {
+      equiptmentForm = new StartingEquiptment();
+      equiptmentForm.ShowDialog();
+
+      if (equiptmentForm.equipment)
+      {
+
+      }
+      else if (equiptmentForm.gold)
+      {        
+        myCharacter.Gold = SetGold();
+        sheetform = new CharacterSheet(myCharacter);
+        sheetform.Show();
+      }
+      else
+      {
+        MessageBox.Show("Major Erros have occured");
+      }      
+    }
+
+    private int SetGold()
+    {
+      int gold;
+      int[] rolls = { 0, 0, 0, 0, 0 };
+      int factor = 10;
+      int diceNum;
+      string classname = MyClass.ClassName;
+      switch (classname)
+      {
+        case "Barbarian":
+          diceNum = 2;
+          break;
+        case "Bard":
+          diceNum = 5;
+          break;
+        case "Cleric":
+          diceNum = 5;
+          break;
+        case "Druid":
+          diceNum = 2;
+          break;
+        case "Fighter":
+          diceNum = 5;
+          break;
+        case "Monk":
+          factor = 1;
+          diceNum = 5;
+          break;
+        case "Paladin":
+          diceNum = 5;
+          break;
+        case "Ranger":
+          diceNum = 5;
+          break;
+        case "Rogue":
+          diceNum = 4;
+          break;
+        case "Sorcerer":
+          diceNum = 3;
+          break;
+        case "Warlock":
+          diceNum = 4;
+          break;
+        case "Wizard":
+          diceNum = 4;
+          break;
+        default:
+          diceNum = 1;
+          break;
+      }
+      for (int i = 0; i < diceNum; i++)
+      {
+        rolls[i] = rnd.Next(1, 5);
+      }
+
+      gold = rolls.Sum() * factor;
+      return gold;
+    }
+
+
 
     private void BtnClose_Click(object sender, RoutedEventArgs e)
     {
       Close();
     }
+
+
+    public Background MyBackground { get; set; }
+    public CharacterClassOption MyClass { get; set; }
+    public Race MyRace { get; set; }
   }
 }

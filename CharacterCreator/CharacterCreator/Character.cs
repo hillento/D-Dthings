@@ -301,5 +301,6 @@ namespace CharacterCreator
     public int[] SkillBonuses { get; set; }
     public int HitPoints { get; set; }
     public object Speed { get; internal set; }
+    public int Gold { get; set; }
   }
 }

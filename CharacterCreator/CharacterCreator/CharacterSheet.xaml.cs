@@ -90,6 +90,7 @@ namespace CharacterCreator
       lblPassivePerception.Content = myCharacter.PassivePerception;
       lblHitPoints.Content = myCharacter.HitPoints;
       lblSpeed.Content = myCharacter.Speed;
+      lblGoldPieces.Content = myCharacter.Gold;
     }
 
     private void SetStats()
