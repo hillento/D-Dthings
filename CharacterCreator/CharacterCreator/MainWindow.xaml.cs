@@ -88,6 +88,7 @@ namespace CharacterCreator
           cbBackgrounds.Items.Add(tempBackground[0]);
           BackgroundDict.Add(tempBackground[0], new Background(tempBackground));
         }
+        Backgrounds = BackgroundDict;
       }
       catch (Exception)
       {
@@ -110,6 +111,7 @@ namespace CharacterCreator
           cbCharacterClasses.Items.Add(tempClasses[0]);
           CharacterClassDict.Add(tempClasses[0], new CharacterClassOption(tempClasses));
         }
+        Classes = CharacterClassDict;
       }
       catch (Exception)
       {
@@ -132,6 +134,7 @@ namespace CharacterCreator
           cbRaces.Items.Add(tempRace[0]);
           RaceDict.Add(tempRace[0], new Race(tempRace));
         }
+        Races = RaceDict;
       }
       catch (Exception)
       {
@@ -750,5 +753,9 @@ namespace CharacterCreator
     public Background MyBackground { get; set; }
     public CharacterClassOption MyClass { get; set; }
     public Race MyRace { get; set; }
+    public Dictionary<string, Background> Backgrounds { get; set; }
+    public Dictionary<string, Race> Races { get; set; }
+    public Dictionary<string, CharacterClassOption> Classes { get; set; }
+    public Dictionary,string, Weapon> Weapon { get; set; }
   }
 }

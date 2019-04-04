@@ -1,0 +1,38 @@
+Weapon Type	Weapon Name	Cost	Damage	Weight	Properties	Range
+Simple Melee	Club	1 sp	1d4 bludgeoning	2	Light	0
+Simple Melee	Dagger	2 gp	1d4 piercing	1	Finesse,Light,Thrown	20/60
+Simple Melee	Greatclub	2 sp	 1d8 bludgeoning	10	Two-handed	0
+Simple Melee	Handaxe	5 gp	1d6 slashing	2	Light, Thrown	20/60
+Simple Melee	Javelin	5 sp	1d6 piercing	2	Thrown	30/120
+Simple Melee	Light Hammer	2 gp	1d4 bludgeoning	2	Light,Thrown	20/60
+Simple Melee	Mace	5 gp	1d6 bludgeoning	4	n/a	0
+Simple Melee	Quarterstaff	2 sp	1d6 bludgeoning	4	Versatile	0
+Simple Melee	Sickle	1 gp	1d4 slashing	2	Light	0
+Simple Melee	Spear	1 gp	1d6	3	Thrown, Versatile	20/60
+Simple Ranged	Light Crossbow	25 gp	1d8 piercing	5	Ammunition,Loading,Two-handed	80/320
+Simple Ranged	Dart	5 cp	1d4 piercing	0.25	Finesse,Thrown	20/60
+Simple Ranged	Shortbow	25 gp	1d6 piercing	2	Ammunition,Two-handed	80/320
+Simple Ranged	Sling	1 sp	1d4 bludgeoning	0	Ammunition	30/120
+Martial Melee	Battleaxe	10 gp	1d8 slashing	4	Versatile	0
+Martial Melee	Flail	10 gp	1d8 bludgeoning	2	n/a	0
+Martial Melee	Glaive	20 gp	1d10 slashing	6	Heavy,Reach,Two-handed	0
+Martial Melee	Greataxe	30 gp	1d12 slashing	7	Heavy,Two-handed	0
+Martial Melee	Greatsword	50 gp	2d6 slashing	6	Heavy,Two-handed	0
+Martial Melee	Halberd	20 gp	1d10 slashing	6	Heavy,Reach,Two-handed	0
+Martial Melee	Lance	10 gp	1d12 piercing	6	Reach,Special	0
+Martial Melee	Longsword	15 gp	1d8 slashing	3	Versatile	0
+Martial Melee	Maul	10 gp	2d6 bludgeoning	10	Heavy,Two-handed	0
+Martial Melee	Morningstar	15 gp	1d8 piercing	4	n/a	0
+Martial Melee	Pike	5 gp	1d10 piercing	18	Heavy,Reach,Two-handed	0
+Martial Melee	Rapier	25 gp	1d8 piercing	2	Finesse	0
+Martial Melee	Scimitar	25 gp	1d6 slashing	3	Finesse,Light	0
+Martial Melee	Shortsword	10 gp	1d6 piercing	2	Finess,Light	0
+Martial Melee	Trident	5 gp	1d6 piercing	4	Thrown,Versatile	0
+Martial Melee	War pick	5 gp	1d8 piercing	2	n/a	0
+Martial Melee	Warhammer	15 gp	1d8 bludgeoning	2	Versatile	0
+Martial Melee	Whip	2 gp	1d4 slashing	3	Finesse, Reach	0
+Martial Ranged	Blowgun	10 gp	1d1 piercing	1	Ammunition,Loading	25/100
+Martial Ranged	Hand Crossbow	75 gp	1d6 piercing	3	Ammunition,Loading,Light	30/120
+Martial Ranged	Heavy Crossbow	50 gp	1d10 piercing	18	Ammunition,Loading,Heavy,Two-handed	100/400
+Martial Ranged	Longbow	50 gp	1d8 piercing	2	Ammunition,Heavy,Two-handed	150/600
+Martial Ranged	Net	1 gp	0	3	Special,Thrown	5/15

@@ -64,6 +64,7 @@
     <Compile Include="StartingEquiptment.xaml.cs">
       <DependentUpon>StartingEquiptment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Weapon.cs" />
     <Page Include="CharacterSheet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +118,9 @@
     <Resource Include="TextResources\Backgrounds.txt" />
     <Resource Include="TextResources\CharacterClasses.txt" />
     <Resource Include="TextResources\Races.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TextResources\Weapons.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
