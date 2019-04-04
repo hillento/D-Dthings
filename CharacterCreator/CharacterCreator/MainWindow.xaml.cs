@@ -727,7 +727,7 @@ namespace CharacterCreator
       }
       else if (equiptmentForm.gold)
       {        
-        myCharacter.Gold = SetGold();
+        myCharacter.Gold = MyClass.SetGold();
         sheetform = new CharacterSheet(myCharacter);
         sheetform.Show();
       }
@@ -737,64 +737,7 @@ namespace CharacterCreator
       }      
     }
 
-    private int SetGold()
-    {
-      int gold;
-      int[] rolls = { 0, 0, 0, 0, 0 };
-      int factor = 10;
-      int diceNum;
-      string classname = MyClass.ClassName;
-      switch (classname)
-      {
-        case "Barbarian":
-          diceNum = 2;
-          break;
-        case "Bard":
-          diceNum = 5;
-          break;
-        case "Cleric":
-          diceNum = 5;
-          break;
-        case "Druid":
-          diceNum = 2;
-          break;
-        case "Fighter":
-          diceNum = 5;
-          break;
-        case "Monk":
-          factor = 1;
-          diceNum = 5;
-          break;
-        case "Paladin":
-          diceNum = 5;
-          break;
-        case "Ranger":
-          diceNum = 5;
-          break;
-        case "Rogue":
-          diceNum = 4;
-          break;
-        case "Sorcerer":
-          diceNum = 3;
-          break;
-        case "Warlock":
-          diceNum = 4;
-          break;
-        case "Wizard":
-          diceNum = 4;
-          break;
-        default:
-          diceNum = 1;
-          break;
-      }
-      for (int i = 0; i < diceNum; i++)
-      {
-        rolls[i] = rnd.Next(1, 5);
-      }
-
-      gold = rolls.Sum() * factor;
-      return gold;
-    }
+    
 
 
 
