@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace CharacterCreator
 {
@@ -19,6 +20,7 @@ namespace CharacterCreator
   /// </summary>
   public partial class CharacterSheet : Window
   {
+    Dictionary<string, Weapon> WeaponDict = new Dictionary<string, Weapon>();
     Character myCharacter;
     
     public CharacterSheet(Character character)
@@ -27,6 +29,7 @@ namespace CharacterCreator
       myCharacter = character;
       InitializeComponent();
 
+      //LoadWeapons();
       SavingThrows();
       SetStats();
       SetPassives();
@@ -35,6 +38,27 @@ namespace CharacterCreator
      
       
       
+    }
+
+    private void LoadWeapons()
+    {
+      StreamReader weaponsfile;
+      string[] tempWeapon;
+      try
+      {
+        weaponsfile = File.OpenText("Weapons.txt");
+        weaponsfile.ReadLine();
+        while (!weaponsfile.EndOfStream)
+        {
+          tempWeapon = weaponsfile.ReadLine().Split('\t');
+          WeaponDict.Add(tempWeapon[1], new Weapon(tempWeapon));
+        }
+      }
+      catch (Exception)
+      {
+
+        throw;
+      }
     }
 
     private void SetSkills()

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Armor.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterSheet.xaml.cs">
       <DependentUpon>CharacterSheet.xaml</DependentUpon>
@@ -65,6 +66,9 @@
       <DependentUpon>StartingEquiptment.xaml</DependentUpon>
     </Compile>
     <Compile Include="Weapon.cs" />
+    <Compile Include="StartItemSelect.xaml.cs">
+      <DependentUpon>StartItemSelect.xaml</DependentUpon>
+    </Compile>
     <Page Include="CharacterSheet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +88,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="StartingEquiptment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartItemSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TextResources\Weapons.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TextResources\Armors.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

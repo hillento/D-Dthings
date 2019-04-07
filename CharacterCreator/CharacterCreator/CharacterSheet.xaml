@@ -743,7 +743,7 @@
     <GroupBox Header="CharacterName"
               Grid.ColumnSpan="2"
               Margin="10">
-      <Label x:Name="lblCharacterName"/>
+      <TextBox x:Name="txtbxCharacterName"/>
     </GroupBox>
     <GroupBox Header="Other Proficiencies &amp; Languages"
               Grid.Row="9"

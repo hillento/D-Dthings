@@ -19,6 +19,7 @@ namespace CharacterCreator
       SetProficiencyBonusBool();
       SavingThrowBoolArray = SetSavingThrows(myCharacterClass);
       SkillProfsArray = SetSkillProfs(myBackground, myCharacterClass);
+      Languages = myBackground.Languages;
       
       
 
@@ -243,6 +244,7 @@ namespace CharacterCreator
     public int ProficiencyBonus { get; set; }
     public int Initiative { get; set; }
     public int PassivePerception { get; set; }
+    public string Languages { get; set; }
 
     public bool StrSavingThrowBool { get; set; }
     public bool DexSavingThrowBool { get; set; }

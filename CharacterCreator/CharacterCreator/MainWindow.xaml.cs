@@ -22,13 +22,13 @@ namespace CharacterCreator
   /// </summary>
   public partial class MainWindow : Window
   {
-    Dictionary<String, Background> BackgroundDict = new Dictionary<string, Background>();
-    Dictionary<String, CharacterClassOption> CharacterClassDict = new Dictionary<string, CharacterClassOption>();
-    Dictionary<String, Race> RaceDict = new Dictionary<string, Race>();
+    Dictionary<string, Background> BackgroundDict = new Dictionary<string, Background>();
+    Dictionary<string, CharacterClassOption> CharacterClassDict = new Dictionary<string, CharacterClassOption>();
+    Dictionary<string, Race> RaceDict = new Dictionary<string, Race>();
     Rollers uRollType = new Rollers();
-    Character myCharacter;
     CharacterSheet sheetform;
     StartingEquiptment equiptmentForm;
+    StartItemSelect weaponForm;
     bool SuicideRoll = false;
     bool ComputerRoll = false;
     bool SelfRoll = false;
@@ -726,13 +726,15 @@ namespace CharacterCreator
 
       if (equiptmentForm.equipment)
       {
-
+        weaponForm = new StartItemSelect(MyClass.ClassName, myCharacter);
+        weaponForm.Show();
       }
       else if (equiptmentForm.gold)
       {        
         myCharacter.Gold = MyClass.SetGold();
         sheetform = new CharacterSheet(myCharacter);
         sheetform.Show();
+        Close();
       }
       else
       {
@@ -756,6 +758,6 @@ namespace CharacterCreator
     public Dictionary<string, Background> Backgrounds { get; set; }
     public Dictionary<string, Race> Races { get; set; }
     public Dictionary<string, CharacterClassOption> Classes { get; set; }
-    public Dictionary,string, Weapon> Weapon { get; set; }
+    public Character myCharacter { get; set; }
   }
 }

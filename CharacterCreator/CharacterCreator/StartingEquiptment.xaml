@@ -22,7 +22,7 @@
             Margin="10"
             Click="BtnMoneyStart_Click"/>
     <Button x:Name="btnEquipmentStart"
-            Content="Start with Equpment"
+            Content="Start with Equipment"
             Grid.Column="2"
             Grid.ColumnSpan="2"
             Margin="10"

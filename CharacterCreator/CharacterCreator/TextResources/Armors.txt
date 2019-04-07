@@ -1,0 +1,14 @@
+Armor Type	Armor Name	Cost	ACMod	ACModMax	AC	Stength	StealthDisadvantage	Weight
+Light Armor	Padded	5 gp	true	false	11	0	true	8
+Light Armor	Leather	10 gp	true	false	11	0	false	10
+Light Armor	Studded leather	45 gp	true	false	12	0	false	13
+Medium Armor	Hide	10 gp	true	true	12	0	false	12
+Medium Armor	Chain Shirt	50 gp	true	true	13	0	false	20
+Medium Armor	Scale mail	50 gp	true	true	14	0	true	45
+Medium Armor	Breastplate	400 gp	true	true	14	0	false	20
+Medium Armor	Half plate	750 gp	true	true	15	0	true	40
+Heavy Armor	Ring mail30 gp	false	false	14	0	true	40
+Heavy Armor	Chain mail	75 gp	false	false	16	13	true	55
+Heavy Armor	Splint	200 gp	false	false	17	15	true	60
+Heavy Armor	Plate	1500 gp	false	false	18	15	true	65
+Shield	Shield	10 gp	false	false	2	0	false	6
